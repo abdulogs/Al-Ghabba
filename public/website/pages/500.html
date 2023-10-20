@@ -1,0 +1,29 @@
+{% extends 'website/layouts/primary.html' %}
+
+{% load static %}
+
+{% load helpers %}
+
+{% block title %} Internal server error - [500] {% endblock %}
+
+{% block seo %} {% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'css/website/pages/message/stylesheet.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="content">
+    <section class="breadcrumb t-center">
+        <div class="msg-icon bx bx-server icon-error"></div>
+        <h1 class="sub-heading">Internal server error</h1>
+        <h2 class="heading"> Membership plan subscribed successfully</h2>
+        <p class="description">For now you can back to home</p>
+        <br>
+        <a href="/" class="btn btn-l btn-p">Go back</a>
+    </section>
+</main>
+{% endblock %}
+
+
+{% block scripts %} {% endblock %}

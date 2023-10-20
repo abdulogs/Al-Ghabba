@@ -1,0 +1,98 @@
+{% extends 'dashboard/layouts/home.html' %}
+{% load static %}
+
+{% block title %} Dashboard - Home {% endblock %}
+
+{% block seo %} {% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'libs/summernote/summernote-lite.min.css' %}">
+{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb" class="border-bottom px-3 py-2">
+    <ol class="breadcrumb m-0">
+        <li class="breadcrumb-item">
+            <a href="/dashboard/home/" class="text-decoration-none text-dark">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Home</li>
+    </ol>
+</nav>
+<section class="overflow-auto h-100 container">
+    <div class="row pt-3">
+        <div class="col-xl-4 col-sm-6 mb-3">
+            <div class="card bg-secondary border-0">
+                <div class="card-body d-flex justify-content-between text-white pb-0">
+                    <h5 class=" m-0">Admins</h5>
+                    <div class="display-2"><i class="bx bx-group"></i></div>
+                </div>
+                <a class="card-footer text-white text-decoration-none" href="/dashboard/user-admins/">
+                    <span class="float-left">View Details</span>
+                    <span class="float-right"><i class="bx bx-angle-right"></i></span>
+                </a>
+            </div>
+        </div>
+        <div class="col-xl-4 col-sm-6 mb-3">
+            <div class="card bg-danger border-0">
+                <div class="card-body d-flex justify-content-between text-white pb-0">
+                    <h5 class=" m-0">Staff</h5>
+                    <div class="display-2"><i class="bx bx-user-circle"></i></div>
+                </div>
+                <a class="card-footer text-white text-decoration-none" href="/dashboard/user-staff/">
+                    <span class="float-left">View Details</span>
+                    <span class="float-right"><i class="bx bx-angle-right"></i></span>
+                </a>
+            </div>
+        </div>
+        <div class="col-xl-4 col-sm-6 mb-3">
+            <div class="card bg-success border-0">
+                <div class="card-body d-flex justify-content-between text-white pb-0">
+                    <h5 class=" m-0">Blogs</h5>
+                    <div class="display-2"><i class="bx bx-group"></i></div>
+                </div>
+                <a class="card-footer text-white text-decoration-none" href="/dashboard/blogs/">
+                    <span class="float-left">View Details</span>
+                    <span class="float-right"><i class="bx bx-angle-right"></i></span>
+                </a>
+            </div>
+        </div>
+        <div class="col-xl-4 col-sm-6 mb-3">
+            <div class="card bg-info border-0">
+                <div class="card-body d-flex justify-content-between text-white pb-0">
+                    <h5 class=" m-0">Blogs categories</h5>
+                    <div class="display-2"><i class="bx bx-group"></i></div>
+                </div>
+                <a class="card-footer text-white text-decoration-none" href="/dashboard/blog-categories/">
+                    <span class="float-left">View Details</span>
+                    <span class="float-right"><i class="bx bx-angle-right"></i></span>
+                </a>
+            </div>
+        </div>
+        <div class="col-xl-4 col-sm-6 mb-3">
+            <div class="card bg-warning border-0">
+                <div class="card-body d-flex justify-content-between text-white pb-0">
+                    <h5 class=" m-0">Faqs</h5>
+                    <div class="display-2"><i class="bx bx-group"></i></div>
+                </div>
+                <a class="card-footer text-white text-decoration-none" href="/dashboard/faqs/">
+                    <span class="float-left">View Details</span>
+                    <span class="float-right"><i class="bx bx-angle-right"></i></span>
+                </a>
+            </div>
+        </div>
+        <div class="col-xl-4 col-sm-6 mb-3">
+            <div class="card bg-dark border-0">
+                <div class="card-body d-flex justify-content-between text-white pb-0">
+                    <h5 class=" m-0">Queries</h5>
+                    <div class="display-2"><i class="bx bx-group"></i></div>
+                </div>
+                <a class="card-footer text-white text-decoration-none" href="/dashboard/queries/">
+                    <span class="float-left">View Details</span>
+                    <span class="float-right"><i class="bx bx-angle-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}

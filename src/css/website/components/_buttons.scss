@@ -1,0 +1,49 @@
+button[disabled=disabled],
+button:disabled {
+    background-color: var(--light) !important;
+    color: #000 !important;
+    cursor: not-allowed;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    border-radius: var(--rounded);
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.5s;
+    box-shadow: var(--shadow);
+    font-size: 14px;
+
+    .icon {
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+
+}
+
+.btn-p {
+    background-color: var(--secondary);
+    color: #fff;
+    font-size: 14px;
+
+    &:hover {
+        background-color: var(--primary);
+        color: #000;
+    }
+}
+
+.btn-l {
+    padding: 15px 25px;
+}
+.btn-group {
+    width: 100%;
+}
+
+.btn-b {
+    width: 100%;
+}

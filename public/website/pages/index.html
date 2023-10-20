@@ -1,0 +1,278 @@
+{% extends 'website/layouts/primary.html' %}
+
+{% load static %}
+
+{% load helpers %}
+
+{% block title %} {% endblock %}
+
+{% block seo %} {% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'css/website/pages/home/stylesheet.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="content">
+    <div class="banner-section">
+        <div class="left-col">
+            <h1 class="sub-heading">Real Estate Agency</h1>
+            <h2 class="heading">Find your dream house by us</h2>
+            <p class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quam voluptates praesentium, aut officia
+                ea, libero dicta fugit voluptatem tempore nisi.Explicabo perferendis omnis ad totam, nulla aperiam ullam
+                praesentium!
+            </p>
+            <form class="search-form" action="/search/" method="GET">
+                <div class="form-group">
+                    <label for="purpose" class="form-label"><b>Property for</b></label>
+                    <select name="purpose" class="form-field">
+                        <option value="">Select</option>
+                        <option value="Sale">Sale</option>
+                        <option value="Rent">Rent</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="bedroom" class="form-label"><b>Bedrooms</b></label>
+                    <select name="bedroom" class="form-field">
+                        <option value="">Select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="bathroom" class="form-label"><b>Bathrooms</b></label>
+                    <select name="bathroom" class="form-field">
+                        <option value="">Select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+                <button class="btn bx bx-search-alt" type="submit"></button>
+            </form>
+        </div>
+        <div class="right-col">
+            <div class="square-one">
+                <div class="bg-dotted"></div>
+                <div class="bg-square"></div>
+                <div class="image">
+                    <img src="{% static 'images/banner/1.jpg' %}" class="img" alt="">
+                </div>
+            </div>
+            <div class="square-two">
+                <div class="bg-dotted"></div>
+                <div class="bg-square"></div>
+                <div class="image">
+                    <img src="{% static 'images/banner/2.jpg' %}" class="img" alt="">
+                </div>
+            </div>
+            <div class="square-three">
+                <div class="bg-dotted"></div>
+                <div class="bg-square"></div>
+                <div class="image">
+                    <img src="{% static 'images/banner/3.jpg' %}" class="img" alt="">
+                </div>
+            </div>
+            <div class="square-four">
+                <div class="bg-dotted"></div>
+                <div class="bg-square"></div>
+                <div class="image">
+                    <img src="{% static 'images/banner/4.jpg' %}" class="img" alt="">
+                </div>
+            </div>
+            <div class="square-five">
+                <div class="bg-dotted"></div>
+                <div class="bg-square"></div>
+                <div class="image">
+                    <img src="{% static 'images/banner/6.jpg' %}" class="img" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+    <section class="properties-section">
+        <div class="section-heading">
+            <p class="section-badge"><span class="badge">Properties</span></p>
+            <h4 class="heading"><b>Featured Listings</b></h4>
+            <p class="description">You can browse your desired home</p>
+        </div>
+        <!-- Properties -->
+        <div class="properties-row  slider-row" id="listing"></div>
+    </section>
+    <!-- Properties -->
+
+    <br><br>
+
+    <section class="about-section">
+        <div class="left-col">
+            <div class="dotted-square"></div>
+            <div class="bg"></div>
+            <div class="image">
+                <img src="{% static 'images/about.jpg' %}" class="img" alt="">
+            </div>
+        </div>
+        <div class="right-col">
+            <div class="section-heading p-0">
+                <p class="section-badge heading-left"><span class="badge">About us</span></p>
+                <h4 class="heading heading-sm heading-left">The Leading Real Estate Marketplace.</h4>
+            </div>
+            <p class="description">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis voluptates facilis iusto nobis!
+                Distinctio, cum. Similique eos, odit perspiciatis repellat quo dolore id atque, illum assumenda nam,
+                velit eum? Consequatur?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab veritatis vitae pariatur illo. In
+                reprehenderit veritatis corporis optio aliquam qui a earum, voluptates accusantium consequuntur sint
+                quaerat architecto, totam accusamus.
+            </p>
+        </div>
+    </section>
+
+    <section class="purpose-row slider-row">
+        <article class="purpose-card">
+            <h3 class="heading"> <span class="icon bx bx-show"></span>Vision</h3>
+            <p class="description">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
+                hic officiis odit commodi! Consequatur eveniet esse quisquam aliquam expedita quia,
+            </p>
+        </article>
+        <div class="purpose-card">
+            <h3 class="heading"><span class="icon bx bx-bar-chart"></span>Mission</h3>
+            <p class="description">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
+                hic officiis odit commodi! Consequatur eveniet esse quisquam aliquam expedita quia,
+            </p>
+        </div>
+        <div class="purpose-card">
+            <h3 class="heading"><span class="icon bx bx-pie-chart"></span>Value</h3>
+            <p class="description">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
+                hic officiis odit commodi! Consequatur eveniet esse quisquam aliquam expedita quia,
+            </p>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="section-heading">
+            <p class="section-badge"><span class="badge">Our Aminities</span></p>
+            <h4 class="heading">Building Aminities</h4>
+            <p class="description">Why we are different from others</p>
+        </div>
+        <div class="services-row">
+            <article class="service-card">
+                <div class="icon bx bx-car"></div>
+                <h4 class="heading">Parking space</h4>
+                <p class="description">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
+                    hic officiis odit commodi! Consequatur eveniet esse quisquam aliquam expedita quia,
+                </p>
+            </article>
+            <article class="service-card">
+                <div class="icon bx bx-swim"></div>
+                <h4 class="heading">Swiming pool</h4>
+                <p class="description">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
+                    hic officiis odit commodi! Consequatur eveniet esse quisquam aliquam expedita quia,
+                </p>
+            </article>
+            <article class="service-card">
+                <div class="icon bx bx-shield-alt"></div>
+                <h4 class="heading">Private security</h4>
+                <p class="description">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
+                    hic officiis odit commodi! Consequatur eveniet esse quisquam aliquam expedita quia,
+                </p>
+            </article>
+            <article class="service-card">
+                <div class="icon bx bx-user-circle"></div>
+                <h4 class="heading">Medical center</h4>
+                <p class="description">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
+                    hic officiis odit commodi! Consequatur eveniet esse quisquam aliquam expedita quia,
+                </p>
+            </article>
+            <article class="service-card">
+                <div class="icon bx bx-building"></div>
+                <h4 class="heading">Large rooms</h4>
+                <p class="description">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
+                    hic officiis odit commodi! Consequatur eveniet esse quisquam aliquam expedita quia,
+                </p>
+            </article>
+            <article class="service-card">
+                <div class="icon bx bx-library"></div>
+                <h4 class="heading">Library area</h4>
+                <p class="description">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
+                    hic officiis odit commodi! Consequatur eveniet esse quisquam aliquam expedita quia,
+                </p>
+            </article>
+            <article class="service-card">
+                <div class="icon bx bx-basketball"></div>
+                <h4 class="heading">Play ground</h4>
+                <p class="description">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
+                    hic officiis odit commodi! Consequatur eveniet esse quisquam aliquam expedita quia,
+                </p>
+            </article>
+            <article class="service-card">
+                <div class="icon bx bx-home-circle"></div>
+                <h4 class="heading">Smart homes</h4>
+                <p class="description">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
+                    hic officiis odit commodi! Consequatur eveniet esse quisquam aliquam expedita quia,
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <section class="agents-section">
+        <div class="section-heading">
+            <p class="section-badge"><span class="badge">Agents</span></p>
+            <h4 class="heading">Agency agents</h4>
+            <p class="description">Why we are different from others</p>
+        </div>
+        <!-- Agents -->
+        <div class="agents-row slider-row" id="agents"></div>
+        <!-- Agents -->
+    </section>
+
+
+    <br><br>
+    <section class="blog-section">
+        <div class="section-heading">
+            <p class="section-badge"><span class="badge">Our Articles</span></p>
+            <h4 class="heading">Recent Blogs</h4>
+            <p class="description">You can read our latest articles</p>
+        </div>
+        <div class="blogs-row slider-row" id="blogs"></div>
+    </section>
+    <br><br><br><br><br><br>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<!-- Modules -->
+<script src="{% static 'modules/website/listing/index.js' %}"></script>
+<script src="{% static 'modules/website/agent/index.js' %}"></script>
+<script src="{% static 'modules/website/blog/index.js' %}"></script>
+
+<!-- Intitialization -->
+<script>loadListing(page = 1, records = 3)</script>
+<script>loadAgents(page = 1, records = 4)</script>
+<script>loadBlogs(page = 1, records = 3)</script>
+{% endblock %}

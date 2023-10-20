@@ -1,0 +1,84 @@
+{% extends 'website/layouts/primary.html' %}
+
+{% load static %}
+
+{% block title %} Contact us - {% endblock %}
+
+{% block seo %} {% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'css/website/pages/contact/stylesheet.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<main class="content">
+    <section class="breadcrumb bg-light">
+        <h1 class="heading">
+            <a href="/" class="bx bx-home t-dark icon"></a>
+            <span class="t-light dash"> - </span> Contact us
+        </h1>
+        <h2 class="sub-heading">Get In Touch.</h2>
+    </section>
+
+    <section class="form-container">
+        <form id="contactform" class="form-card form-card-50" autocomplete="on" autocapitalize="on">
+            <div class="form-header t-center">
+                <h1 class="heading">Share your queries.</h1>
+                <p class="sub-heading">We will reply you with in 24 hours</p>
+            </div>
+            <div class="form-body">
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="fullname" class="form-label">
+                                <span class="bx bx-user icon"></span>Fullname
+                                <span class="required">*</span>
+                            </label>
+                            <input type="text" class="input-field" id="fullname" name="fullname"
+                                placeholder="Enter your fullname">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="email" class="form-label">
+                                <span class="bx bx-envelope icon"></span>Email
+                                <span class="required">*</span>
+                            </label>
+                            <input type="email" class="input-field" id="email" name="email"
+                                placeholder="Enter your email address..">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="form-label">
+                        <span class="bx bx-phone icon"></span>Phone
+                    </label>
+                    <input type="text" class="input-field" id="phone" name="phone"
+                        placeholder="Enter your mobile number">
+                </div>
+                <div class="form-group">
+                    <label for="message" class="form-label">
+                        <span class="bx bx-comment icon"></span>Message
+                        <span class="required">*</span>
+                    </label>
+                    <textarea class="input-field input-larger" id="message" rows="3" name="message"
+                        placeholder="Write your query"></textarea>
+                </div>
+            </div>
+            <div class="form-footer">
+                <div class="btn-group">
+                    <button class="btn btn-l btn-p" id="btnsubmit">Send message</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    <br><br>
+</main>
+{% endblock %}
+
+
+{% block scripts %}
+<!-- Modules -->
+<script src="{% static 'modules/website/query/index.js' %}"></script>
+{% endblock %}

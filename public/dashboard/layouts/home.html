@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/png">
+    <title> {% block title %} {% endblock %} </title>
+    {% block seo %}
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="" />
+    {% endblock %}
+    <!-- Common css -->
+    <link rel="stylesheet" href="{% static 'libs/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'icons/boxicons/css/boxicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard/layout/stylesheet.css' %}">
+    <!-- Specific css -->
+    {% block styles %} {% endblock %}
+</head>
+
+<body class="layout d-flex h-100">
+
+    {% include "dashboard/components/sidenav.html" %}
+
+    <main class="content h-100 d-flex flex-column bg-white">
+
+        <header class="d-md-none d-lg-none d-block">
+            <nav class="d-flex align-items-center border-bottom py-2 px-3">
+                <a class="d-inline-block" href="#">
+                    <img src="{% static 'images/logo.png' %}" alt="" height="30" class="d-inline-block">
+                </a>
+                <div class="d-flex align-items-center ms-auto">
+                    <button class="btn font-20 btn-sm shadow-none bx bx-menu opensidenav"></button>
+                </div>
+            </nav>
+        </header>
+
+        <nav class="d-flex align-items-center border-bottom py-2 px-3">
+            <a class="font-20 text-dark text-decoration-none">
+                <b class="align-middle">Dashboard</b>
+            </a>
+        </nav>
+
+        {% block content %} {% endblock %}
+    </main>
+
+    <div id="response"></div>
+
+    <input type="hidden" value="{{csrf_token}}" name="token" id="token">
+
+    <!-- Libraries -->
+    <script src="{% static 'libs/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'libs/popper/popper.min.js' %}"></script>
+    <script src="{% static 'libs/bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- Common.js -->
+    <script src="{% static 'js/dashboard/base.js' %}"></script>
+    <script src="{% static 'js/dashboard/message.js' %}"></script>
+
+    <!-- Page scripts -->
+    {% block scripts %} {% endblock %}
+</body>
+
+</html>

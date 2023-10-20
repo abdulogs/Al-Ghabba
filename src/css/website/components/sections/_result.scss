@@ -1,0 +1,82 @@
+.results-section {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding: var(--container-d);
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+
+    .left-col {
+        .heading {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: bolder;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .description {
+            font-size: 16px;
+            font-weight: 200;
+        }
+    }
+
+    .right-col {
+        width: 150px;
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            border-radius: var(--rounded);
+            border: 1px solid var(--border);
+            padding: 8px 15px;
+
+            select {
+                -o-webkit-appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background: transparent;
+                background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+                background-repeat: no-repeat;
+                background-position-x: 98%;
+                background-position-y: -1px;
+                border: 1px solid #dfdfdf;
+            }
+
+            .form-label {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+
+            .form-field {
+                width: 100%;
+                outline: none;
+                border: none;
+                background-color: var(--light);
+                padding: 5px 10px;
+                border-radius: var(--rounded);
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .results-section {
+        padding: var(--container-d);
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .results-section {
+        padding: var(--container-t);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .results-section {
+        padding: var(--container-m);
+    }
+}

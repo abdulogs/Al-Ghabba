@@ -1,0 +1,68 @@
+{% extends 'website/layouts/primary.html' %}
+
+{% load static %}
+
+{% block title %} Blogs - {% endblock %}
+
+{% block seo %} {% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'css/website/pages/blogs/stylesheet.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<main class="content">
+    <section class="breadcrumb bg-light">
+        <h1 class="heading">
+            <a href="/" class="bx bx-home t-dark icon"></a>
+            <span class="t-light dash"> - </span> Blogs
+        </h1>
+        <h2 class="sub-heading">Read our latest articles.</h2>
+        <p class="description">Discover the flow of information related to real estate.</p>
+        <br>
+        <input type="hidden" id="blogcategory" value="{{ category }}">
+    </section>
+
+    <section class="results-section">
+        <div class="left-col">
+            <h3 class="heading"><b>BLOGS</b></h3>
+            <p class="description" id="blogscount"></p>
+        </div>
+        <div class="right-col">
+            <div class="form-group">
+                <label for="ordering" class="form-label"><b>Sort listing</b></label>
+                <select name="ordering" id="ordering" class="form-field">
+                    <option value="-id">Recents</option>
+                    <option value="id">Oldests</option>
+                </select>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br>
+
+    <!-- Blogs -->
+    <section class="blogs-row" id="blogs"></section>
+    <!-- Blogs -->
+
+    <!-- Loading -->
+    <div class="t-center">
+        <button class="btn btn-p bx bx-chevrons-left" id="start"></button>
+        <button class="btn btn-p" value="0" id="previous">Previous</button>
+        <button class="btn btn-p" value="2" id="next">Next</button>
+        <button class="btn btn-p bx bx-chevrons-right" id="last"></button>
+    </div>
+    <!-- Loading -->
+
+    <br><br><br><br><br><br><br><br><br>
+</main>
+{% endblock %}
+
+
+{% block scripts %}
+<!-- Modules -->
+<script src="{% static 'modules/website/blog/index.js' %}"></script>
+
+<!-- Intitialization -->
+<script>loadBlogs()</script>
+{% endblock %}

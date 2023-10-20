@@ -1,0 +1,50 @@
+{% extends 'website/layouts/primary.html' %}
+
+{% load static %}
+
+{% load helpers %}
+
+{% block title %} {{ blog.name }} - {% endblock %}
+
+{% block seo %} {% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'css/website/pages/blog/stylesheet.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<main class="content">
+    <section class="breadcrumb bg-light">
+        <h1 class="heading">
+            <a href="/" class="bx bx-home t-dark icon"></a>
+            <span class="t-light dash"> - </span> Blog
+        </h1>
+        <h2 class="sub-heading">{{ blog.name }}</h2>
+        <div class="blog-meta">
+            <a href="/blogs/category/{{ blog.category.name }}" class="category">{{ blog.category.name }}</a>
+            <span class="bx bxs-circle dot"></span>
+            <p class="author">
+                <span class="bx bx-user-circle icon"></span>
+                {{blog.created_by.first_name}}
+                {{blog.created_by.last_name}}
+            </p>
+            <span class="bx bxs-circle dot"></span>
+            <p class="date"><span class="bx bx-time icon"></span> {{ blog.created_at }}</p>
+        </div>
+    </section>
+
+    <section class="blog-details">
+        <a href="{{ blog.image | placeholder }}" class="blog-image glightbox3" data-gallery="gallery1"
+            href="{{ blog.image | placeholder }}">
+            <img src="{{ blog.image | placeholder }}" alt="{{ blog.alt }}" class="image">
+        </a>
+        <div class="description">
+            {{ blog.description | safe }}
+        </div>
+    </section>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+</main>
+{% endblock %}

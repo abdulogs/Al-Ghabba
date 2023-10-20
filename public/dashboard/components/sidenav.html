@@ -1,0 +1,134 @@
+{% load static %}
+{% load helpers %}
+{% load active_link_tags %}
+<aside class="sidebar h-100 bg-light border" id="sidebar">
+    <div class="card border-0 h-100">
+        <div class="card-header bg-light border-0 p-0">
+            <nav class="d-flex align-items-center py-2 px-3">
+                <a class="d-inline-block ms-2" href="/dashboard/">
+                    <img src="{% static 'images/logo.png' %}" alt="" height="50" class="d-inline-block">
+                </a>
+                <div class="d-flex align-items-center ms-auto">
+                    <a href="/" class="btn font-20 btn-sm shadow-none bx bx-globe"></a>
+                    <button href="/"
+                        class="btn font-20 btn-sm shadow-none bx bx-x closesidenav ms-2 d-md-none d-lg-none d-inline"></button>
+                </div>
+            </nav>
+        </div>
+        <div class="card-header px-3 border-0 bg-light">
+            <div class="dropdown d-grid mt-3">
+                <button
+                    class="btn btn-sm shadow-none d-flex d-block align-items-center align-content-center justify-content-between text-start"
+                    type="button" data-bs-toggle="dropdown">
+                    <div class="d-block sidenav-avatar">
+                        <img src="{{ user.avatar | placeholder }}"
+                            class="img-thumbnail rounded-circle avatar-image p-1 d-inline-block"
+                            alt="{{ user.first_name }} {{ user.last_name }}">
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-1">{{ user.first_name }} {{ user.last_name }}</h6>
+                        <span class="badge bg-info">Admin</span>
+                    </div>
+                    <span class="bx bx-dots-vertical-rounded font-20 ms-auto text-muted"></span>
+                </button>
+                <ul class="dropdown-menu w-100 shadow border-0" aria-labelledby="dropdownMenuButton1">
+                    <li>
+                        <a class="dropdown-item py-2 d-flex align-items-center" href="/dashboard/profile/">
+                            <span class="bx bx-user-circle font-20 me-2"></span> My profile
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item py-2 d-flex align-items-center" href="/dashboard/logout/"
+                            onclick="logout()">
+                            <span class="bx bx-log-out font-20 me-2"></span> Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-body border-0 bg-light h-100 px-3">
+            <div class="accordion" id="sidebarmenu">
+                <ul class="menu-list">
+                    <li class="menu-title">Modules</li>
+                    <li class="menu-item {% active_link 'DHome' 'active' %}">
+                        <a href="/dashboard/home/" class="menu-link">
+                            <i class="bx bx-tv font-20"></i> <span> Dashboard </span>
+                        </a>
+                    </li>
+                    <!-- Users -->
+                    <li class="menu-item 
+                    {% active_link 'DUAdmins' 'active'  %} 
+                    {% active_link 'DUStaff' 'active'  %}
+                    {% active_link 'DUAgents' 'active'  %}
+                    ">
+                        <a href="javascript: void(0);" data-bs-toggle="collapse" data-bs-target="#usersmenu"
+                            class="menu-link">
+                            <i class="bx bx-group font-20"></i>
+                            <span> Users </span>
+                            <span class="bx bx-chevron-down font-20"></span>
+                        </a>
+                        <ul class="nav-second-level sub-menu-list collapse
+                        {% active_link 'DUAdmins' 'show'  %} 
+                        {% active_link 'DUStaff' 'show'  %}
+                        {% active_link 'DUAgents' 'show'  %}
+                        " id="usersmenu" data-bs-parent="#sidebarmenu" class="menu-link">
+                            <li class="sub-menu-item {% active_link 'DUAdmins' 'sub-active'  %}">
+                                <a href="/dashboard/user-admins/" class="sub-menu-link">Admins</a>
+                            </li>
+                            <li class="sub-menu-item {% active_link 'DUStaff' 'sub-active'  %}">
+                                <a href="/dashboard/user-staff/" class="sub-menu-link">Staff</a>
+                            </li>
+                            <li class="sub-menu-item {% active_link 'DUAgents' 'sub-active'  %}">
+                                <a href="/dashboard/user-agents/" class="sub-menu-link">Agents</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <!-- Users -->
+                    <!-- Blogs -->
+                    <li
+                        class="menu-item  {% active_link 'DBlogs' 'active'  %} {% active_link 'DBCategories' 'active'  %}">
+                        <a href="javascript: void(0);" data-bs-toggle="collapse" data-bs-target="#blogsmenu"
+                            class="menu-link">
+                            <i class="bx bx-edit font-20"></i>
+                            <span> Blogs </span>
+                            <span class="bx bx-chevron-down font-20"></span>
+                        </a>
+                        <ul class="nav-second-level sub-menu-list collapse {% active_link 'DBlogs' 'show'  %} {% active_link 'DBCategories' 'show'  %}"
+                            id="blogsmenu" data-bs-parent="#sidebarmenu" class="menu-link">
+                            <li class="sub-menu-item {% active_link 'DBlogs' 'sub-active'  %}">
+                                <a href="/dashboard/blogs/" class="sub-menu-link">All Blogs</a>
+                            </li>
+                            <li class="sub-menu-item {% active_link 'DBCategories' 'sub-active'  %}">
+                                <a href="/dashboard/blog-categories/" class="sub-menu-link">Categories</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Blogs -->
+
+                    <!-- Listing -->
+                    <li class="menu-item {% active_link 'DListing' 'active'  %}">
+                        <a href="/dashboard/listing/" class="menu-link">
+                            <i class="bx bx-home-circle font-20"></i><span> Listing </span>
+                        </a>
+                    </li>
+                    <!-- Listing -->
+                    <!-- Queries -->
+                    <li class="menu-item {% active_link 'DQueries' 'active'  %}">
+                        <a href="/dashboard/queries/" class="menu-link">
+                            <i class="bx bx-question-mark font-20"></i><span> Queries </span>
+                        </a>
+                    </li>
+                    <!-- Queries -->
+                    <!-- FAQs -->
+                    <li class="menu-item {% active_link 'DFaqs' 'active'  %}">
+                        <a href="/dashboard/faqs/" class="menu-link">
+                            <i class="bx bx-info-circle font-20"></i><span> FAQs </span>
+                        </a>
+                    </li>
+                    <!-- FAQs -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>

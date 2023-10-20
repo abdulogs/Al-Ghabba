@@ -1,0 +1,69 @@
+{% extends 'website/layouts/primary.html' %}
+
+{% load static %}
+
+{% block title %} Agents - {% endblock %}
+
+{% block seo %} {% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'css/website/pages/agents/stylesheet.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<main class="content">
+    <!-- Breadcrumb -->
+    <section class="breadcrumb bg-light">
+        <h1 class="heading">
+            <a href="/" class="bx bx-home t-dark icon"></a>
+            <span class="t-light dash"> - </span> Agents
+        </h1>
+        <h2 class="sub-heading">Our agency agents.</h2>
+        <p class="description">You can interact with our agents here.</p>
+        <br>
+    </section>
+    <!-- Breadcrumb -->
+
+    <!-- Results -->
+    <section class="results-section">
+        <div class="left-col">
+            <h3 class="heading"><b>Agents listing</b></h3>
+            <p class="description" id="agentscount"></p>
+        </div>
+        <div class="right-col">
+            <div class="form-group">
+                <label for="ordering" class="form-label"><b>Sort listing</b></label>
+                <select name="ordering" id="ordering" class="form-field">
+                    <option value="-id">Recents</option>
+                    <option value="id">Oldests</option>
+                </select>
+            </div>
+        </div>
+    </section>
+    <!-- Results -->
+
+    <!-- Agents -->
+    <section class="agents-row" id="agents"></section>
+    <!-- Agents -->
+
+    <!-- Loading -->
+    <div class="loading-btns t-center">
+        <button class="btn btn-p bx bx-chevrons-left" id="start"></button>
+        <button class="btn btn-p" value="0" id="previous">Previous</button>
+        <button class="btn btn-p" value="2" id="next">Next</button>
+        <button class="btn btn-p bx bx-chevrons-right" id="last"></button>
+    </div>
+    <!-- Loading -->
+
+    <br><br><br><br><br><br><br><br><br>
+</main>
+{% endblock %}
+
+
+{% block scripts %}
+<!-- Modules -->
+<script src="{% static 'modules/website/agent/index.js' %}"></script>
+<!-- Intitialization -->
+<script>loadAgents()</script>
+{% endblock %}

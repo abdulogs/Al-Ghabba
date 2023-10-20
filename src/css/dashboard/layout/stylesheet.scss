@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+@import "../variables";
+@import "./navbar";
+@import "./sidebar";
+@import "./content";
+@import "./footer";
+@import "./alert";
+
+.btn-warning {
+    background-color: #FF5A3C !important;
+    color: white !important;
+
+    &:hover,
+    &:focus {
+        background-color: darken(#FF5A3C, 1) !important;
+        color: white !important;
+    }
+}
+
+
+.btn {
+    border-radius: 5px;
+}
+
+
+.font-10 {
+    font-size: 10px;
+}
+
+.font-12 {
+    font-size: 12px;
+}
+
+.font-14 {
+    font-size: 14px;
+}
+
+.font-16 {
+    font-size: 16px;
+}
+
+.font-18 {
+    font-size: 18px;
+}
+
+.font-20 {
+    font-size: 20px;
+}
+
+
+.br-10 {
+    border-radius: 10px;
+}
+
+
+#response {
+    position: fixed;
+    top: 10px;
+    width: 300px;
+    right: 20px;
+    z-index: 2000;
+}
+
+.custom-alert {
+    margin-bottom: 5px;
+    background: #222;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+.custom-alert .custom-alert-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.custom-alert .custom-alert-body .custom-alert-icon {
+    margin: 0 8px;
+    padding: 8px;
+    border-radius: 50px;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+.custom-alert .custom-alert-body .custom-alert-content .custom-alert-heading {
+    color: white !important;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.custom-alert .custom-alert-body .custom-alert-content .custom-alert-subheading {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.custom-alert .alert-close {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50px;
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.dropdown-menu {
+    .dropdown-item {
+
+        &:hover,
+        &:focus {
+            background-color: #f5f5f5;
+            color: black;
+        }
+    }
+}
+
+@media screen and (max-width: 1030px) {}
+
+@media screen and (max-width: 800px) {}
+
+@media screen and (max-width: 600px) {}
+
+@media screen and (max-width: 500px) {}
+
+@media screen and (max-width: 400px) {}
+
+@media screen and (max-width: 400px) {}
+
+@media screen and (max-width: 300px) {}

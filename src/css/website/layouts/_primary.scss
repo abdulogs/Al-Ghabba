@@ -1,0 +1,21 @@
+.content {
+    margin-top: 90px;
+}
+
+@media screen and (max-width: 1030px) {
+    .content {
+        margin-top: 90px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .content {
+        margin-top: 70px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .content {
+        margin-top: 105px;
+    }
+}

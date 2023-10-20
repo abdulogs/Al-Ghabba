@@ -1,0 +1,96 @@
+@import "../../layouts/primary";
+
+
+.section-policy {
+    padding: var(--container-d);
+    position: relative;
+
+    .heading {
+        font-size: 35px;
+        color: var(--text-dark);
+        margin-bottom: 30px;
+        margin-top: 30px;
+        position: relative;
+        line-height: 45px;
+    }
+
+
+    .sub-heading {
+        font-size: 25px;
+        color: var(--text-dark);
+        margin-bottom: 20px;
+        position: relative;
+        line-height: 35px;
+
+    }
+
+    .list {
+        margin-bottom: 30px;
+        font-size: 16px;
+
+        li {
+            margin-bottom: 10px;
+        }
+    }
+
+    .description {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 30px;
+        margin-bottom: 20px;
+
+        .link {
+            color: var(--bg-primary);
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .dotted {
+        background-image: -webkit-repeating-radial-gradient(center center, rgba(187, 183, 183, 0.4), rgba(187, 183, 183, 0.4) 2px, transparent 2px, transparent 100%);
+        background-image: -moz-repeating-radial-gradient(center center, rgba(187, 183, 183, 0.4), rgba(187, 183, 183, 0.4) 2px, transparent 2px, transparent 100%);
+        background-image: -ms-repeating-radial-gradient(center center, rgba(187, 183, 183, 0.4), rgba(187, 183, 183, 0.4) 2px, transparent 2px, transparent 100%);
+        background-image: repeating-radial-gradient(center center, rgba(187, 183, 183, 0.4), rgba(187, 183, 183, 0.4) 2px, transparent 2px, transparent 100%);
+        -webkit-background-size: 5px 5px;
+        -moz-background-size: 5px 5px;
+        background-size: 5px 5px;
+    }
+
+    .square {
+        width: 50px;
+        height: 50px;
+        float: left;
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        background-size: 6px 6px;
+        z-index: -1;
+    }
+
+    .bg {
+        position: absolute;
+        width: 80%;
+        height: 320px;
+        z-index: -1;
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 25px 50px -12px;
+        border: 5px solid var(--bg-primary);
+        background-color: var(--bg-main);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .section-policy {
+        padding: var(--container-m);
+
+        .heading {
+            font-size: 25px;
+        }
+
+        .sub-heading {
+            font-size: 20px;
+        }
+    }
+}

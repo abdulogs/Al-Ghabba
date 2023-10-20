@@ -1,0 +1,77 @@
+{% extends 'website/layouts/primary.html' %}
+
+{% load static %}
+
+{% load helpers %}
+
+{% block title %} About us - {% endblock %}
+
+{% block seo %} {% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'css/website/pages/about/stylesheet.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<main class="content">
+    <section class="breadcrumb bg-light">
+        <h1 class="heading">
+            <a href="/" class="bx bx-home t-dark icon"></a>
+            <span class="t-light dash"> - </span> About us
+        </h1>
+        <h2 class="sub-heading">Stuff About us</h2>
+    </section>
+    <br><br><br>
+    <section class="about-section">
+        <div class="left-col">
+            <div class="dotted-square"></div>
+            <div class="bg"></div>
+            <div class="image">
+                <img src="{% static 'images/about.jpg' %}" class="img" alt="">
+            </div>
+        </div>
+        <div class="right-col">
+            <p class="description">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis voluptates facilis iusto nobis!
+                Distinctio, cum. Similique eos, odit perspiciatis repellat quo dolore id atque, illum assumenda nam,
+                velit eum? Consequatur?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab veritatis vitae pariatur illo. In
+                reprehenderit veritatis corporis optio aliquam qui a earum, voluptates accusantium consequuntur sint
+                quaerat architecto, totam accusamus.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab veritatis vitae pariatur illo. In
+                reprehenderit veritatis corporis optio aliquam qui a earum, voluptates accusantium consequuntur sint
+                quaerat architecto, totam accusamus.
+            </p>
+        </div>
+    </section>
+
+    <section class="purpose-row">
+        <article class="purpose-card">
+            <h3 class="heading"> <span class="icon bx bx-show"></span>Vision</h3>
+            <p class="description">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
+                hic officiis odit commodi! Consequatur eveniet esse quisquam aliquam expedita quia,
+            </p>
+        </article>
+        <div class="purpose-card">
+            <h3 class="heading"><span class="icon bx bx-bar-chart"></span>Mission</h3>
+            <p class="description">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
+                hic officiis odit commodi! Consequatur eveniet esse quisquam aliquam expedita quia,
+            </p>
+        </div>
+        <div class="purpose-card">
+            <h3 class="heading"><span class="icon bx bx-pie-chart"></span>Value</h3>
+            <p class="description">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
+                hic officiis odit commodi! Consequatur eveniet esse quisquam aliquam expedita quia,
+            </p>
+        </div>
+    </section>
+    <br><br><br><br><br><br>
+</main>
+{% endblock %}
+
+
+{% block scripts %} {% endblock %}

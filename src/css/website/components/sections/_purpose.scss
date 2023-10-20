@@ -1,0 +1,96 @@
+.purpose-row {
+    padding: var(--container-d);
+    padding-bottom: 50px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+
+    .purpose-card {
+        width: 30%;
+        position: relative;
+        background-color: var(--dark);
+        box-shadow: var(--shadow);
+        border-radius: 5px;
+        padding: 20px 25px;
+        transition: all 0.5s;
+        border-bottom: 3px solid transparent;
+
+        .heading {
+            font-size: 20px;
+            font-weight: bolder;
+            margin-bottom: 20px;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+
+            .icon {
+                font-size: 35px;
+                background-color: var(--light);
+                padding: 10px;
+                border-radius: 50px;
+                margin-right: 10px;
+                color: var(--secondary);
+            }
+        }
+
+        .description {
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 25px;
+        }
+
+        &:hover {
+            background-color: var(--light);
+            border-bottom: 3px solid var(--secondary);
+
+
+            .heading {
+                .icon {
+                    background-color: var(--secondary) !important;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 1030px) {
+    .purpose-row {
+        padding: var(--container-t);
+
+        .purpose-card {
+            width: 47%;
+            max-width: 47%;
+            min-width: 47%;
+            margin: 0 10px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .purpose-row {
+        padding: var(--container-m);
+
+        .purpose-card {
+            max-width: 46%;
+            min-width: 46%;
+            width: 46%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .purpose-row {
+        padding: var(--container-m);
+
+        .purpose-card {
+            max-width: 100%;
+            min-width: 100%;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.step-wizard {
+  border: none;
+}
+.step-wizard .nav-item {
+  text-align: center;
+  border-top: 3px solid #ddd;
+}
+.step-wizard .nav-item .nav-link {
+  border: none;
+  text-transform: uppercase;
+  color: #160E60;
+  outline: none;
+}
+.step-wizard .nav-item .nav-link .step-circle {
+  display: inline-block;
+  position: relative;
+  top: -25px;
+  font-size: 30px;
+  border-radius: 50px;
+  background-color: white;
+}
+.step-wizard .nav-item .nav-link .step-heading {
+  display: block;
+}
+.step-wizard .nav-item .nav-link .step-subheading {
+  display: block;
+}/*# sourceMappingURL=stylesheet.css.map */

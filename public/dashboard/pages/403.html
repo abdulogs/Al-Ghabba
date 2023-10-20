@@ -1,0 +1,30 @@
+{% extends 'dashboard/layouts/logout.html' %}
+
+{% load static %}
+
+{% block title %} Error [403] - Access denied {% endblock %}
+
+{% block seo %} {% endblock %}
+
+{% block styles %} {% endblock %}
+
+{% block content %}
+<div class="card border-0 p-4 text-center">
+    <div class="card-header bg-white p-0 border-0">
+        <h1 class="text-warning m-0 mb-2"><b>Access denied</b></h1>
+    </div>
+    <div class="card-body p-0">
+        <h4 class="m-0 font-weight-bolder mb-3"><b>Error [403]</b></h4>
+        <p class="m-0 font-weight-bolder mb-3">
+            The page you are trying to access has restricted access.
+            Please refer to your system administrator
+        </p>
+    </div>
+    <div class="card-footer bg-white p-0 border-0">
+        <a href="/dashboard/" class="btn btn-primary btn-sm"> Go back </a>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

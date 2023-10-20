@@ -1,0 +1,233 @@
+.properties-row {
+    padding: var(--container-d);
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    align-content: center;
+    flex-wrap: wrap;
+
+    .property-card {
+        width: 31%;
+        position: relative;
+        border-radius: var(--rounded-lg);
+        transition: all 0.5s;
+        box-shadow: var(--shadow);
+        margin: 0 10px 40px 10px;
+        display: flex;
+        align-items: stretch;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .card-header {
+            display: inline-block;
+            width: 100%;
+            height: 200px;
+            text-decoration: none;
+            border-radius: inherit;
+            position: relative;
+
+            .badge {
+                position: absolute;
+                background-color: #FF328B;
+                padding: 5px 10px;
+                border-radius: var(--rounded-lg);
+                font-size: 14px;
+                font-weight: bold;
+                color: #fff;
+                margin: 15px;
+                box-shadow: var(--shadow);
+            }
+
+            .image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                border-radius: inherit;
+            }
+        }
+
+        .card-body {
+            padding: 15px;
+            padding-top: 10px;
+
+
+            .price {
+                font-size: 25px;
+                margin-top: 5px;
+                display: block;
+                font-weight: bold;
+                color: var(--text);
+            }
+
+            .heading {
+                margin-top: 5px;
+                font-weight: normal;
+
+                a {
+                    text-decoration: none;
+                    font-size: 16px;
+                    color: var(--text);
+                    line-height: 30px;
+                    font-weight: bold;
+
+                    &:hover {
+                        color: var(--secondary);
+                    }
+                }
+            }
+
+            .description {
+                font-size: 14px;
+                color: var(--text-light);
+                margin-top: 5px;
+                margin-bottom: 10px;
+                padding: 0px;
+
+                .icon {
+                    color: var(--secondary);
+                }
+            }
+
+            .property-details {
+                display: flex;
+                align-items: center;
+                align-content: center;
+                justify-content: space-evenly;
+                margin-top: 20px;
+
+                .badge {
+                    background-color: var(--light);
+                    border-radius: var(--rounded-lg);
+                    padding: 8px 5px;
+                    display: flex;
+                    align-items: center;
+                    align-content: center;
+                    justify-content: center;
+                    width: 100%;
+                    font-weight: bolder;
+
+                    .icon {
+                        margin-right: 5px;
+                        font-size: 20px;
+                    }
+
+                    &:first-child {
+                        margin-right: 20px;
+                    }
+
+                    &:last-child {
+                        margin-left: 20px;
+                    }
+                }
+
+                .orange {
+                    color: orange;
+                }
+
+                .green {
+                    color: purple;
+                }
+
+                .blue {
+                    color: dodgerblue;
+                }
+            }
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+            padding: 15px;
+            padding-top: 10px;
+
+
+            .author-details {
+                display: flex;
+                align-items: center;
+                align-content: center;
+
+                .avatar-image {
+                    width: 40px;
+                    min-width: 40px;
+                    max-width: 40px;
+                    height: 40px;
+                    min-height: 40px;
+                    max-height: 40px;
+                    height: 40px;
+                    border-radius: 50px;
+
+                    .image {
+                        width: 100%;
+                        min-width: 100%;
+                        max-width: 100%;
+                        height: 100%;
+                        min-height: 100%;
+                        max-height: 100%;
+                        object-fit: contain;
+                        object-position: center;
+                        border-radius: inherit;
+                    }
+                }
+
+                .author-body {
+                    padding: 10px;
+                    text-decoration: none;
+                    color:#000;
+                    .fullname {
+                        font-size: 14px;
+                        margin-bottom: 7px;
+                        color: var(--text);
+                    }
+
+                    .username {
+                        font-size: 12px;
+                        color: var(--text-light);
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .properties-row {
+        padding: var(--container-t);
+
+        .property-card {
+            width: 47%;
+            min-width: 47%;
+            max-width: 47%;
+            margin: 0 10px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .properties-row {
+        padding: var(--container-t);
+
+        .property-card {
+            width: 49%;
+            min-width: 49%;
+            max-width: 49%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .properties-row {
+        padding: var(--container-m);
+
+        .property-card {
+            width: 95%;
+            max-width: 95%;
+            min-width: 95%;
+        }
+    }
+}

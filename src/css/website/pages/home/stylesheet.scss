@@ -1,0 +1,70 @@
+@import "../../components/cards/blog";
+@import "../../components/cards/property";
+@import "../../components/cards/service";
+@import "../../components/cards/agent";
+@import "../../components/sections/purpose";
+@import "../../components/sections/about";
+@import "../../components/sections/banner";
+
+
+
+.content {
+    margin-top: 20px;
+
+  
+}
+
+@media screen and (max-width: 1030px) {
+    .content {
+        .banner-section {
+            padding: var(--container-t);
+            height: auto;
+        }
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .content {
+        margin-top: 100px;
+
+        .banner-card {
+            padding: var(--container-m);
+            display: flex;
+            flex-direction: column;
+
+            .left-col {
+                width: 100%;
+
+                .heading {
+                    font-size: 50px;
+                }
+            }
+
+            .right-col {
+                display: none;
+            }
+        }
+
+
+        .translator-card {
+            padding: var(--container-t);
+
+            .card-header {
+                display: flex;
+                flex-direction: column;
+
+                .col {
+                    width: 100%;
+
+                    .form-panel {
+                        display: flex;
+                        justify-content: flex-end;
+                        padding: 10px;
+
+                    }
+                }
+            }
+        }
+    }
+}

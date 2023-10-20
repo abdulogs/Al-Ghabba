@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/png">
+    <title> {% block title %} {% endblock %} </title>
+    {% block seo %}
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="" />
+    {% endblock %}
+    <!-- Common css -->
+    <link rel="stylesheet" href="{% static 'libs/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'icons/boxicons/css/boxicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard/layout/stylesheet.css' %}">
+    <!-- Specific css -->
+    {% block styles %} {% endblock %}
+</head>
+
+<body class="layout d-flex h-100">
+
+    {% include "dashboard/components/sidenav.html" %}
+
+    <main class="content h-100 d-flex flex-column bg-white">
+   
+        {% include "dashboard/components/header.html" %}
+
+        {% block content %} {% endblock %}
+        <div class=" border-top px-3 py-2 d-flex align-items-center">
+            <span id="total" class="font-12">Showing 1 to 5 of 1</span>
+            <div class="ms-auto">
+                <button class="btn btn-outline-dark px-1 font-20 border bx bx-chevrons-left" id="start"></button>
+                <button class="btn btn-outline-dark px-1 font-20 border bx bx-chevron-left" value="0"
+                    id="previous"></button>
+                <button class="btn btn-outline-dark px-1 font-20 border bx bx-chevron-right" value="2"
+                    id="next"></button>
+                <button class="btn btn-outline-dark px-1 font-20 border bx bx-chevrons-right" id="last"></button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Filters -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="filters">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title">
+                <span class="bx bx-slider align-middle text-warning"></span>
+                Filters
+            </h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <form id="filter" autocomplete="off">
+                <div class="input-group mb-4">
+                    <input type="text" class="form-control shadow-none border font-12" id="search"
+                        placeholder="Search...">
+                    <button class="input-group-text bx bx-search  shadow-none border" type="submit"></button>
+                </div>
+                <div class="mt-3 mb-3">
+                    <h6 class="mb-0 text-muted"><b>Sort by : avalability</b></h6>
+                    <p class="text-muted mb-4 font-12">This option will assist you to filter data availability</p>
+                    <input type="hidden" id="availability" value="">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input availability" type="radio" id="active1" name="active" value="0">
+                        <label class="form-check-label" for="active1"><b>Inactive</b></label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input availability" type="radio" id="active2" name="active" value="1">
+                        <label class="form-check-label" for="active2"><b>Active</b></label>
+                    </div>
+                </div>
+                <div class="mt-3 mb-3">
+                    <h6 class="mb-0 text-muted"><b>Sort by : creation</b></h6>
+                    <p class="text-muted mb-4 font-12">This option will assist you sort listing with creation</p>
+                    <input type="hidden" id="ordering" value="-id">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input ordering" type="radio" id="sort1" name="sort" value="-id"
+                            checked>
+                        <label class="form-check-label" for="sort1"><b>Recents</b></label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input ordering" type="radio" id="sort2" name="sort" value="id">
+                        <label class="form-check-label" for="sort2"><b>Oldest</b></label>
+                    </div>
+                </div>
+
+                <div class="mt-3 mb-3">
+                    <h6 class="mb-0 text-muted"><b>Records</b></h6>
+                    <p class="text-muted mb-4 font-12">This option will assist you to manage listing</p>
+                    <input type="hidden" id="limit" value="30">
+                    <div class="form-check mb-1 w-100">
+                        <input type="radio" class="form-check-input limit" id="record10" name="records" value="10">
+                        <label class="form-check-label align-middle m-0 w-100" for="record10"><b>10</b></label>
+                    </div>
+                    <div class="form-check mb-1 w-100">
+                        <input type="radio" class="form-check-input limit" id="record30" name="records" value="30"
+                            checked>
+                        <label class="form-check-label align-middle m-0 w-100" for="record30"><b>30</b></label>
+                    </div>
+                    <div class="form-check mb-1 w-100">
+                        <input type="radio" class="form-check-input limit" id="record50" name="records" value="50">
+                        <label class="form-check-label align-middle m-0 w-100" for="record50"><b>50</b></label>
+                    </div>
+                    <div class="form-check mb-1 w-100">
+                        <input type="radio" class="form-check-input limit" id="record80" name="records" value="80">
+                        <label class="form-check-label align-middle m-0 w-100" for="record80"><b>80</b></label>
+                    </div>
+                    <div class="form-check mb-1 w-100">
+                        <input type="radio" class="form-check-input limit" id="record100" name="records" value="100">
+                        <label class="form-check-label align-middle m-0 w-100" for="record100"><b>100</b></label>
+                    </div>
+                    <div class="form-check mb-1 w-100">
+                        <input type="radio" class="form-check-input limit" id="record200" name="records" value="200">
+                        <label class="form-check-label align-middle m-0 w-100" for="record200"><b>200</b></label>
+                    </div>
+                    <div class="form-check mb-1 w-100">
+                        <input type="radio" class="form-check-input limit" id="record500" name="records" value="500">
+                        <label class="form-check-label align-middle m-0 w-100" for="record500"><b>500</b></label>
+                    </div>
+                    <div class="form-check mb-1 w-100">
+                        <input type="radio" class="form-check-input limit" id="record1000" name="records" value="1000">
+                        <label class="form-check-label align-middle m-0 w-100" for="record1000"><b>1000</b></label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="offcanvas-footer d-flex p-3 py-2 border-top bg-light">
+            <button class="btn btn-warning w-25 font-12 me-2 filter-btn" type="submit" form="filter"
+                data-bs-dismiss="offcanvas">
+                <span class="bx bx-filter-alt me-2"></span><b>Filter</b>
+            </button>
+            <button class="btn btn-dark w-25 font-12 me-2 reset-btn" type="submit" form="filter"
+                data-bs-dismiss="offcanvas">
+                <span class="bx bx-reset me-2"></span><b>Reset</b>
+            </button>
+            <button class="btn btn-light border w-50 font-12 ms-2" data-bs-dismiss="offcanvas" type="button">
+                <b>Cancel</b>
+            </button>
+        </div>
+    </div>
+    <!-- Filters -->
+
+
+    <!-- Details -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="detailsnav">
+        <form class="h-100 d-flex flex-column modalForm" autocomplete="off" method="post" enctype="multipart/form-data">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title d-flex align-items-center">
+                    <span class="bx bx-show me-2 font-20 text-success"></span><b>DETAILS</b>
+                </h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body" id="details"></div>
+            <div class="offcanvas-footer d-flex p-2 border-top bg-light">
+                <button class="btn btn-light border w-100 font-12 ms-2" data-bs-dismiss="offcanvas"
+                    type="button"><b>Close</b></button>
+            </div>
+        </form>
+    </div>
+    <!-- Details -->
+
+    <!-- Create or update -->
+    {% block modals %} {% endblock %}
+    <!-- Create or update -->
+
+    <div id="response"></div>
+
+    <input type="hidden" value="{{csrf_token}}" name="token" id="token">
+
+    <!-- Libraries -->
+    <script src="{% static 'libs/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'libs/popper/popper.min.js' %}"></script>
+    <script src="{% static 'libs/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'libs/moment/moment.min.js' %}"></script>
+
+    <!-- Common.js -->
+    <script src="{% static 'js/dashboard/base.js' %}"></script>
+    <script src="{% static 'js/dashboard/message.js' %}"></script>
+
+
+    <!-- Page scripts -->
+    {% block scripts %} {% endblock %}
+
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+{% extends 'dashboard/layouts/login.html' %}
+{% load static %}
+
+{% block title %} Faqs {% endblock %}
+
+{% block seo %} {% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'libs/summernote/summernote-lite.min.css' %}">
+{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb" class="border-bottom px-3 py-2">
+    <ol class="breadcrumb m-0">
+        <li class="breadcrumb-item">
+            <a href="/dashboard/" class="text-decoration-none text-dark">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="/dashboard/faqs/" class="text-decoration-none text-dark">FAQs</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">All</li>
+    </ol>
+</nav>
+<section class="overflow-auto h-100">
+    <table class="table table-card  mb-0 font-12">
+        <thead class="bg-light">
+            <tr>
+                <th class="px-4 border-bottom text-uppercase text-muted" scope="col">ID</th>
+                <th class="border-bottom text-uppercase text-muted" scope="col">Question</th>
+                <th class="border-bottom text-uppercase text-muted" scope="col">Answer</th>
+                <th class="border-bottom text-uppercase text-muted" scope="col">Status</th>
+                <th class="border-bottom text-uppercase text-muted" scope="col">Created by</th>
+                <th class="border-bottom text-uppercase text-muted" scope="col">Created at</th>
+                <th class="border-bottom text-uppercase text-muted" scope="col">Updated at</th>
+                <th class="px-3 border-bottom text-uppercase text-muted" scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody id="data" class="font-12"></tbody>
+    </table>
+</section>
+{% endblock %}
+
+
+{% block modals %}
+<div class="offcanvas offcanvas-end" tabindex="-1" id="createupdateform">
+    <form class="h-100 d-flex flex-column modalForm" autocomplete="off" method="post" enctype="multipart/form-data">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title d-flex align-items-center" id="modelTitle">
+
+            </h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body h-100">
+            <div id="hiddenFields"></div>
+            <div class="form-group mb-3">
+                <label class="font-weight-bolder mb-0" for="question"><b>Question</b></label>
+                <input class="form-control shadow-none border form-control-lg font-14" id="question" type="text" />
+            </div>
+     
+            <div class="form-group mb-3">
+                <label class="font-weight-bolder mb-0" for="answer"><b>Answer</b></label>
+                <textarea id="answer" class="form-control shadow-none border form-control-lg font-14" rows="8"></textarea>
+            </div>
+            <div class="form-group mb-3">
+                <label class="font-weight-bolder mb-0" for="status"><b>Active</b></label>
+                <select id="is_active" name="is_active" class="form-select shadow-none border form-control-lg font-14"></select>
+            </div>
+        </div>
+        <div class="offcanvas-footer d-flex p-3 py-2 border-top bg-light">
+            <button class="btn btn-primary btn-submit w-50 font-12 me-2" id="btnsubmit"
+                type="submit"><b>Proceed</b></button>
+            <button class="btn btn-light border w-50  font-12 ms-2" data-bs-dismiss="offcanvas"
+                type="button"><b>Cancel</b></button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Modules -->
+<script src="{% static 'modules/dashboard/faq/listing.js' %}"></script>
+<script src="{% static 'modules/dashboard/faq/create.js' %}"></script>
+<script src="{% static 'modules/dashboard/faq/update.js' %}"></script>
+<script src="{% static 'modules/dashboard/faq/view.js' %}"></script>
+<script src="{% static 'modules/dashboard/faq/delete.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,34 @@
+@import "../../variables";
+
+.step-wizard {
+    border: none;
+
+    .nav-item {
+        text-align: center;
+        border-top: 3px solid #ddd;
+
+        .nav-link {
+            border: none;
+            text-transform: uppercase;
+            color: $primary;
+            outline: none;
+
+            .step-circle {
+                display: inline-block;
+                position: relative;
+                top:-25px;
+                font-size: 30px;
+                border-radius: 50px;
+                background-color: white;
+            }
+
+            .step-heading {
+                display: block;
+            }
+
+            .step-subheading {
+                display: block;
+            }
+        }
+    }
+}

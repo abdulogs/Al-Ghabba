@@ -1,0 +1,118 @@
+.t-lower {
+    text-transform: lowercase !important;
+
+    &::first-letter {
+        text-transform: uppercase
+    }
+}
+
+
+.bg {
+    background-image: url('../../images/bg.jpg');
+    margin-bottom: -10px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.t-right {
+    text-align: right !important;
+}
+
+.t-left {
+    text-align: left;
+}
+
+.link {
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+    font-size: 14px;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+
+.w-100 {
+    width: 100%;
+}
+
+
+.bg-light {
+    background-color: var(--light);
+}
+
+.bg-dark {
+    background-color: var(--dark);
+}
+
+.bg-primary {
+    background-color: var(--primary);
+}
+
+.bg-secondary {
+    background-color: var(--secondary);
+}
+
+.bg-transparent {
+    background-color: transparent;
+}
+
+/* Background colors */
+
+
+
+/* text colors */
+.t-dark {
+    color: var(--text-main);
+}
+
+.t-light {
+    color: var(--text-light);
+}
+
+.t-secondary {
+    color: var(--secondary) !important;
+}
+
+.t-primary {
+    color: var(--primary) !important;
+}
+
+.t-white {
+    color: white;
+}
+
+.t-black {
+    color: black;
+}
+
+.ml-5 {
+    margin-left: 5px;
+}
+
+.mr-5 {
+    margin-right: 5px;
+}
+
+.p-0 {
+    padding: 0px !important;
+}
+
+
+@media screen and (max-width: 850px) {
+    .slider-row {
+        display: flex;
+        justify-content: flex-start !important;
+        flex-wrap: nowrap !important;
+        overflow: scroll;
+
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
+    }
+}

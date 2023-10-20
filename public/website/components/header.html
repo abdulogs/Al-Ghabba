@@ -1,0 +1,89 @@
+{% load static %}
+
+{% load active_link_tags %}
+
+{% load helpers %}
+<header class="header">
+    <div class="topnav" id="topnav">
+        <div class="row">
+            <a href="" class="email"><span class="bx bx-envelope icon"></span> info@alghabba.com</a>
+            <div class="social">
+                <a href="" class="bx bxl-facebook"></a>
+                <a href="" class="bx bxl-twitter"></a>
+                <a href="" class="bx bxl-linkedin"></a>
+                <a href="" class="bx bxl-youtube"></a>
+            </div>
+        </div>
+    </div>
+    <div class="navbar" id="navbar">
+        <a href="/" class="logo">
+            <img src="{% static 'images/logo.png' %}" class="image" alt="Logo">
+        </a>
+        <nav class="r-menu">
+            <ul class="n-list" id="menu-list">
+                <li class="n-item">
+                    <a href="/search/" class="n-link {% active_link 'WSearch' 'active' %}">Search</a>
+                </li>
+                <li class="n-item">
+                    <a href="/agents/" class="n-link {% active_link 'WAgents' 'active' %}">Agents</a>
+                </li>
+                <li class="n-item">
+                    <a href="/about-us/" class="n-link {% active_link 'WAboutUs' 'active' %}">About us</a>
+                </li>
+                <li class="n-item">
+                    <a href="/contact-us/" class="n-link {% active_link 'WContactUs' 'active' %}">Contact us</a>
+                </li>
+                <li class="n-item">
+                    <a href="/blogs/" class="n-link {% active_link 'WBlogs' 'active' %}">Blogs
+                    </a>
+                </li>
+                <li class="n-item">
+                    <a href="/faqs/" class="n-link {% active_link 'WFaq' 'active' %}">FAQs</a>
+                </li>
+            </ul>
+            {% if user.is_authenticated == False %}
+            <ul class="auth-list" id="auth-list">
+                <li class="l-item"><a href="/login/" class="l-btn">Login</a> </li>
+                <li class="l-item"><a href="/register/" class="l-btn">Signup</a></li>
+            </ul>
+            {% endif %}
+
+            {% if user.is_authenticated == True %}
+            <div class="dropdown">
+                <a href="javascript:void(0)" class="user-menu" data-toggle="dropdown">
+                    <span class="avatar">
+                        <img src="{{ user.avatar | placeholder }}" alt="" class="image">
+                    </span>
+                    <span class="name">{{ user.username }}</span>
+                    <span class="bx bx-caret-down icon"></span>
+                </a>
+                <div class="dropdown-menu bg-white border">
+
+                    <a href="/dashboard/profile/" class="dropdown-item">
+                        <span class="icon bx bx-cog"></span>My settings
+                    </a>
+
+                    <a href="/logout/" class="dropdown-item" onclick="logout()">
+                        <span class="icon bx bx-log-out"></span> Logout
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+        </nav>
+        <button class="n-btn bx bx-menu-alt-right" onclick="openNav()"></button>
+    </div>
+
+</header>
+
+<aside class="sm-sidebar" id="sm-sidebar">
+    <div class="sm-sidebar-wrapper">
+        <div class="sidebar-header">
+            <a href="/" class="logo">
+                <img src="{% static 'images/logo.png' %}" class="image" alt="Logo">
+            </a>
+            <a href="javascript:void(0)" class="closebtn btn btn-light" onclick="closeNav()">&times;</a>
+        </div>
+        <div class="sidebar-body" id="s-menu-list"></div>
+        <div class="sidebar-footer" id="s-auth-list"></div>
+    </div>
+</aside>

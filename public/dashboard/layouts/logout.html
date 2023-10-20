@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/png">
+    <title> {% block title %} {% endblock %} </title>
+    {% block seo %}
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="" />
+    {% endblock %}
+    <!-- Common css -->
+    <link rel="stylesheet" href="{% static 'libs/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'icons/boxicons/css/boxicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard/layout/stylesheet.css' %}">
+
+    <!-- Specific css -->
+    {% block styles %} {% endblock %}
+
+</head>
+
+<body class="h-100 overflow-hidden">
+    <main class="container-fluid h-100">
+        <div class="row h-100 justify-content-center">
+            <div class="col-sm-3 d-flex flex-column justify-content-center h-100">
+                {% block content %} {% endblock %}
+            </div>
+        </div>
+    </main>
+
+    <input type="hidden" value="{{csrf_token}}" name="token" id="token">
+
+    <div id="response"></div>
+
+    <!-- Libraries -->
+    <script src="{% static 'libs/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'libs/popper/popper.min.js' %}"></script>
+    <script src="{% static 'libs/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'libs/moment/moment.js' %}"></script>
+
+    <!-- Common -->
+    <script src="{% static 'js/website/base.js' %}"></script>
+    <script src="{% static 'js/website/message.js' %}"></script>
+
+    <!-- Page scripts -->
+    {% block scripts %} {% endblock %}
+
+</body>
+
+</html>>

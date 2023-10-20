@@ -1,0 +1,146 @@
+{% extends 'website/layouts/primary.html' %}
+
+{% load static %}
+
+{% load helpers %}
+
+{% block title %} {{ property.name }} - Property details - {% endblock %}
+
+{% block seo %} {% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'css/website/pages/property/stylesheet.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<main class="content">
+    <section class="breadcrumb bg-light">
+        <h1 class="heading">
+            <a href="/" class="bx bx-home t-dark icon"></a>
+            <span class="t-light dash"> - </span> Property details
+        </h1>
+        <h2 class="sub-heading">{{ property.name }}</h2>
+        <div class="property-meta">
+            <p class="badge">{{ property.purpose }}</p>
+            <span class="bx bxs-circle dot"></span>
+            <p class="badge"><span class="bx bx-location icon"></span> {{ property.address }}</p>
+        </div>
+    </section>
+
+    <section class="property-details">
+        <div class="left-col">
+            <a href="{{ property.image | placeholder }}" class="property-image bg-light">
+                <img src="{{ property.image | placeholder }}" alt="" class="image">
+            </a>
+            <div class="box">
+                <h2 class="heading">
+                    <span class="bx bx-building icon"></span>
+                    <b>Overview</b>
+                </h2>
+                <div class="description">
+                    {{ property.description }}
+                </div>
+            </div>
+
+            <div class="box">
+                <h2 class="heading">
+                    <span class="bx bx-info-circle icon"></span>
+                    <b>Property details</b>
+                </h2>
+                <div class="details-row">
+                    <ul class="list">
+                        <li><label>Property ID:</label> <span>{{ property.id }}</span></li>
+                        <li><label>Home Area: </label> <span>{{ property.square_feet }} sqft</span></li>
+                        <li><label>Bedrooms:</label> <span>{{ property.bedroom }}</span></li>
+                        <li><label>Bathrooms:</label> <span>{{ property.bathroom }}</span></li>
+                        <li><label>Year built:</label> <span>1992</span></li>
+                    </ul>
+                    <ul class="list">
+                        <li><label>Lot Area:</label> <span>HZ29 </span></li>
+                        <li><label>Lot dimensions:</label> <span>120 sqft</span></li>
+                        <li><label>Beds:</label> <span>7</span></li>
+                        <li><label>Price:</label> <span>{{ property.price }}</span></li>
+                        <li><label>Property Status:</label> <span>{{ property.purpose }}</span></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="box">
+                <h2 class="heading">
+                    <span class="bx bx-info-circle icon"></span>
+                    <b>Amenities</b>
+                </h2>
+                <div class="details-row">
+                    <ul class="list">
+                        <li><i class="bx bx-check icon"></i> <b>Air conditioning</b></li>
+                        <li><i class="bx bx-check icon"></i> <b>Barbeque</b></li>
+                        <li><i class="bx bx-check icon"></i> <b>Refrigerator</b></li>
+                        <li><i class="bx bx-check icon"></i> <b>Gym</b></li>
+                        <li><i class="bx bx-check icon"></i> <b>Recreation</b></li>
+                    </ul>
+                    <ul class="list">
+                        <li><i class="bx bx-check icon"></i> <b>Microwave </b></li>
+                        <li><i class="bx bx-check icon"></i> <b>Wifi</b></li>
+                        <li><i class="bx bx-check icon"></i> <b>Gym place</b></li>
+                        <li><i class="bx bx-check icon"></i> <b>Indoor game</b></li>
+                        <li><i class="bx bx-check icon"></i> <b>Security</b></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box">
+                <h2 class="heading">
+                    <span class="bx bx-map icon"></span>
+                    <b>Location</b>
+                </h2>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9334.271551495209!2d-73.97198251485975!3d40.668170674982946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25b0456b5a2e7%3A0x68bdf865dda0b669!2sBrooklyn%20Botanic%20Garden%20Shop!5e0!3m2!1sen!2sbd!4v1590597267201!5m2!1sen!2sbd"
+                    width="100%" height="350" frameborder="0" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+            </div>
+        </div>
+        <div class="right-col">
+            <article class="agent-contact">
+                <div class="agent-media">
+                    <a href="/agent-details/{{ property.created_by.username }}" class="avatar">
+                        <img src="{{ property.created_by.avatar | placeholder }}" alt="{{ property.created_by.username }}" class="image">
+                    </a>
+                    <div class="details-body">
+                        <h3 class="heading">
+                            <a href="/agent-details/{{ property.created_by.username }}/">
+                                {{ property.created_by.first_name }} {{ property.created_by.last_name }}
+                            </a>
+                        </h3>
+                        <p class="username">@{{ property.created_by.username }}</p>
+                    </div>
+                </div>
+                <form id="contactform" autocomplete="on" autocapitalize="on">
+                    <div class="form-group">
+                        <label for="fullname" class="form-label"><i class="bx bx-user icon"></i>Fullname</label>
+                        <input type="text" class="input-field" id="fullname" name="fullname"
+                            placeholder="Enter your fullname">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label"><i class="bx bx-envelope icon"></i>Email</label>
+                        <input type="email" class="input-field" id="email" name="email"
+                            placeholder="Enter your email address..">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label"><i class="bx bx-comment icon"></i>Message</label>
+                        <textarea class="input-field input-larger" id="message" rows="3" name="message"
+                            placeholder="Write your message"></textarea>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-p" id="btnsubmit">Send message</button>
+                    </div>
+                </form>
+            </article>
+        </div>
+    </section>
+    <br><br><br><br><br><br>
+</main>
+{% endblock %}
+
+{% block scripts %} {% endblock %}

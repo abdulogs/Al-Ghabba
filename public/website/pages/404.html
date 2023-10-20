@@ -1,0 +1,33 @@
+{% extends 'website/layouts/primary.html' %}
+
+{% load static %}
+
+{% load helpers %}
+
+{% block title %} Page not found - [404] {% endblock %}
+
+{% block seo %} {% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'css/website/pages/message/stylesheet.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="content">
+    <section class="breadcrumb t-center">
+        <div class="msg-icon bx bx-x-circle icon-error"></div>
+        <h1 class="sub-heading">Page not found</h1>
+        <h2 class="heading">The content you are requesting might not be available right now.</h2>
+        <p class="description">For now you can back to home</p>
+        <br><br><br>
+        <a href="javascript:void(0)" class="btn" onclick="window.history.back()">Go back</a>
+        <br><br><br>
+        <br><br><br>
+        <br><br><br>
+        <br><br><br>
+    </section>
+</main>
+{% endblock %}
+
+
+{% block scripts %} {% endblock %}

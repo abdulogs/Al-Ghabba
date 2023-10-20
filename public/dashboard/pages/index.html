@@ -1,0 +1,38 @@
+{% extends 'dashboard/layouts/logout.html' %}
+{% load static %}
+
+{% block title %} Login to your account {% endblock %}
+
+{% block seo %} {% endblock %}
+
+{% block styles %}
+
+{% endblock %}
+
+{% block content %}
+<form class="card border-0 p-4" id="login">
+    <h1 class="text-center mb-2 m-0 h3">
+        <b>Login</b>
+    </h1>
+    <p class="text-center text-muted mb-3">Welcome back! login to your account!</p>
+    <div class="form-group mb-2">
+        <input type="email" class="form-control form-control-lg border-0 bg-light font-12 shadow-none" id="email"
+            placeholder="Enter your email">
+    </div>
+
+    <div class="form-group">
+        <input type="password" class="form-control form-control-lg border-0 bg-light font-12 shadow-none" id="password"
+            placeholder="Enter your password">
+    </div>
+    <div class="d-grid mt-3">
+        <a href="/dashboard/password-forgot/" class="text-dark text-decoration-none font-12">
+            Forgot password?
+        </a>
+        <button type="submit" class="btn btn-warning btn-sm mt-2 font-14 rounded" id="btnsubmit"><b>Login</b></button>
+    </div>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'modules/dashboard/account/login/index.js' %}"></script>
+{% endblock %}

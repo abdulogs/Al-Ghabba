@@ -1,0 +1,75 @@
+{% extends 'website/layouts/primary.html' %}
+
+{% load static %}
+
+{% block title %} Faqs - {% endblock %}
+
+{% block seo %} {% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'css/website/pages/faqs/stylesheet.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<main class="content">
+    <section class="breadcrumb">
+        <h1 class="heading">
+            <a href="/" class="bx bx-home t-dark icon"></a>
+            <span class="t-light dash"> - </span> FAQs
+        </h1>
+        <h2 class="sub-heading t-lowe">Find the answers to some common questions here</h2>
+    </section>
+
+    <section class="faq-section">
+        {% if faqs %}
+        {% for faq in faqs %}
+        <div class="faq-card">
+            <button class="accordion">
+                <span class="bx bx-info-circle icon"></span>
+                {{ faq.question }}
+            </button>
+            <div class="panel">
+                <div class="description">
+                    <p>{{ faq.answer | safe }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </section>
+    <br><br><br><br><br><br><br><br><br><br>
+</main>
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script>
+
+<script>
+    $(".description").filter(function () {
+        var html = $(this).html();
+        var emailPattern = /[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}/;
+        var matched_str = $(this).html().match(emailPattern);
+        if (matched_str) {
+            $(this).html(html.replace(emailPattern, "<a class='link-p' href='mailto:" + matched_str + "'>" + matched_str + "</a>"));
+            return $(this)
+        }
+    })
+</script>
+{% endblock %}

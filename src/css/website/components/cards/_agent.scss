@@ -1,0 +1,150 @@
+.agents-row {
+    margin-top: 50px;
+    display: flex;
+    align-content: center;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: var(--container-d);
+
+    .agent-card {
+        width: 22%;
+        position: relative;
+        border-radius: var(--rounded-lg);
+        transition: all 0.5s;
+        display: flex;
+        align-items: stretch;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+        box-shadow: var(--shadow);
+        margin: 0 10px 40px 20px;
+        background-color: white;
+        overflow: hidden;
+
+        .avatar {
+            height: 150px;
+            max-height: 150px;
+            min-height: 150px;
+            width: 150px;
+            min-width: 150px;
+            max-width: 150px;
+            display: inline-block;
+            text-decoration: none;
+            border-radius: 150px;
+            padding: 3px;
+            background-color: var(--light);
+            border-right: 5px solid var(--secondary);
+            border-left: 5px solid var(--primary);
+            align-self: center;
+            margin-top: 30px;
+
+            .image {
+                object-fit: cover;
+                object-position: center;
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+            }
+        }
+
+        .heading {
+            font-size: 25px;
+            font-weight: bolder;
+            margin-top: 10px;
+            margin-bottom: 0px;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            a {
+                color: var(--text-main);
+                text-decoration: none;
+                text-align: center;
+
+                &:hover {
+                    color: var(--text-primary);
+                }
+            }
+        }
+
+        .username {
+            font-size: 14px;
+            margin-top: 10px;
+            font-weight: normal;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .social-panel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 0;
+            padding: 0;
+
+            .item {
+                text-decoration: none;
+                background-color: var(--light);
+                color: var(--text);
+                padding: 10px 11px;
+                border-radius: 50px;
+                font-size: 20px;
+                margin: 5px;
+                transition: 0.5s all;
+                box-shadow: var(--shadow);
+
+                .icon {
+                    font-size: 25px;
+
+                }
+
+                &:hover {
+                    background-color: var(--secondary);
+                    color: white;
+                }
+            }
+        }
+
+        &:hover {
+            background-color: var(--bg-light);
+        }
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .agents-row {
+        padding: var(--container-d);
+
+        .agent-card {
+            width: 44%;
+            max-width: 44%;
+            min-width: 44%;
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .agents-row {
+        padding: var(--container-t);
+
+        .agent-card {
+            width: 41%;
+            max-width: 41%;
+            min-width: 41%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .agents-row {
+        padding: var(--container-m);
+
+        .agent-card {
+            width: 90%;
+            max-width: 90%;
+            min-width: 90%;
+        }
+    }
+}

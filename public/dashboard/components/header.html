@@ -1,0 +1,25 @@
+{% load static %}
+
+<header class="d-md-none d-lg-none d-block">
+    <nav class="d-flex align-items-center border-bottom py-2 px-3">
+        <a class="d-inline-block" href="/dashboard/">
+            <img src="{% static 'images/logo.png' %}" alt="logo" height="30" class="d-inline-block">
+        </a>
+        <div class="d-flex align-items-center ms-auto">
+            <button class="btn font-20 btn-sm shadow-none bx bx-menu  opensidenav"></button>
+        </div>
+    </nav>
+</header>
+
+<nav class="d-flex align-items-center border-bottom py-2 px-3">
+    <a class="font-20 text-dark text-decoration-none">
+        <b class="align-middle">Dashboard</b>
+    </a>
+    <div class="ms-auto d-flex align-items-center">
+        <button class="btn btn-light font-20 me-2 bx bx-slider" data-bs-toggle="offcanvas"
+            data-bs-target="#filters"></button>
+        <button class="btn btn-warning createBtn">
+            <span class="bx bx-plus-circle align-middle"></span> Create
+        </button>
+    </div>
+</nav>

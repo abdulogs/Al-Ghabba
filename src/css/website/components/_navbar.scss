@@ -1,0 +1,266 @@
+@import "../components/dropdown";
+
+.header {
+    position: fixed;
+    top: 0px;
+    z-index: 800;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: var(--shadow);
+
+    .topnav {
+        padding: var(--container-d);
+        color: #fff;
+        text-align: center;
+        width: inherit;
+        background-color: #000;
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            align-content: center;
+
+            .email {
+                text-decoration: none;
+                color: #ddd;
+                display: flex;
+                align-items: center;
+                .icon{
+                    color: var(--secondary);
+                    margin-right: 5px;
+                    font-size: 20px;
+                }
+            }
+
+            .social {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                align-content: center;
+
+                a {
+                    text-decoration: none;
+                    color: #ddd;
+                    font-size: 15px;
+                    padding: 5px;
+                    margin: 0 5px;
+                    border-radius: 50px;
+                    background-color: #222;
+
+                    &:hover {
+                        color: var(--secondary);
+                    }
+                }
+            }
+        }
+
+    }
+
+    .navbar {
+        padding: var(--container-d);
+        background-color: var(--dark);
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: space-between;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        transition: top 0.3s;
+        width: inherit;
+
+
+        .logo {
+            width: 180px;
+            min-width: 180px;
+            max-width: 180px;
+
+            .image {
+                object-fit: contain;
+                width: 100%;
+                min-width: 100%;
+                max-width: 100%;
+                height: 100%;
+                min-height: 100%;
+                max-height: 100%;
+            }
+        }
+
+        .r-menu {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            align-content: center;
+
+            .n-list {
+                display: flex;
+                align-items: center;
+                align-content: center;
+                list-style: none;
+                padding: 0px;
+                margin: 0px;
+
+                .n-item {
+                    margin: 0px;
+                    padding: 0px;
+
+                    .n-link {
+                        padding: 15px;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-weight: bold;
+                        font-size: 14px;
+                        color: var(--text-main);
+                        text-align: center;
+
+
+                        .icon {
+                            vertical-align: middle;
+                            font-size: 20px;
+                        }
+
+                        &:hover {
+                            color: var(--text-light);
+                        }
+                    }
+
+                    .active {
+                        color: var(--secondary);
+                    }
+                }
+            }
+
+            .auth-list {
+                padding: 0px;
+                list-style-type: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .l-item {
+                    .l-btn {
+                        text-decoration: none;
+                        padding: 8px 18px;
+                        color: var(--text);
+                        background-color: var(--light);
+                        border-radius: 3px;
+                        margin-left: 10px;
+                        font-weight: bold;
+                        font-size: 14px;
+                        transition: 0.5s all;
+
+                        &:hover {
+                            background-color: var(--secondary);
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            .user-menu {
+                text-decoration: none;
+                color: var(--text);
+                font-size: 14px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .icon {
+                    font-size: 14px;
+                    margin-left: 5px;
+                }
+
+
+                .avatar {
+                    display: inline-block;
+                    width: 40px;
+                    min-width: 40px;
+                    max-width: 40px;
+                    height: 40px;
+                    min-height: 40px;
+                    max-height: 40px;
+                    border-radius: 50px;
+                    margin-right: 10px;
+
+                    .image {
+                        display: inline-block;
+                        object-fit: cover;
+                        object-position: center;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: inherit;
+                    }
+                }
+            }
+
+        }
+
+        .n-btn {
+            background-color: transparent;
+            color: var(--text);
+            border: none;
+            outline: line;
+            font-size: 28px;
+            cursor: pointer;
+            display: none;
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 1030px) {
+    .header {
+        .topnav {
+            padding: var(--container-d);
+        }
+
+        .navbar {
+            padding: var(--container-d);
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .header {
+        .topnav {
+            padding: var(--container-t);
+        }
+        .navbar {
+            padding: var(--container-t);
+
+            .r-menu {
+
+                .n-list,
+                .auth-list {
+                    display: none;
+                }
+
+                .dropdown {
+                    margin-right: 10px;
+                }
+            }
+
+            .n-btn {
+                display: block;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header {
+        .topnav {
+            padding: var(--container-m);
+        }
+
+        .navbar {
+            padding: var(--container-m);
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+    }
+}

@@ -1,0 +1,103 @@
+{% extends 'dashboard/layouts/login.html' %}
+{% load static %}
+
+{% block title %} Queries {% endblock %}
+
+{% block seo %} {% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'libs/summernote/summernote-lite.min.css' %}">
+{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb" class="border-bottom px-3 py-2">
+    <ol class="breadcrumb m-0">
+        <li class="breadcrumb-item">
+            <a href="/dashboard/" class="text-decoration-none text-dark">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="/dashboard/queries/" class="text-decoration-none text-dark">Queries</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">All</li>
+    </ol>
+</nav>
+<section class="overflow-auto h-100">
+    <table class="table table-card  mb-0 font-12">
+        <thead class="bg-light">
+            <tr>
+                <th class="px-4 border-bottom text-uppercase text-muted" scope="col">ID</th>
+                <th class="border-bottom text-uppercase text-muted" scope="col">Fullname</th>
+                <th class="border-bottom text-uppercase text-muted" scope="col">Email</th>
+                <th class="border-bottom text-uppercase text-muted" scope="col">Phone</th>
+                <th class="border-bottom text-uppercase text-muted" scope="col">Answered</th>
+                <th class="border-bottom text-uppercase text-muted" scope="col">Created at</th>
+                <th class="border-bottom text-uppercase text-muted" scope="col">Updated at</th>
+                <th class="px-3 border-bottom text-uppercase text-muted" scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody id="data" class="font-12"></tbody>
+    </table>
+</section>
+{% endblock %}
+
+
+{% block modals %}
+<div class="offcanvas offcanvas-end" tabindex="-1" id="createupdateform">
+    <form class="h-100 d-flex flex-column modalForm" autocomplete="off" method="post" enctype="multipart/form-data">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title d-flex align-items-center" id="modelTitle">
+
+            </h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body h-100">
+            <div id="hiddenFields"></div>
+            <div class="form-group mb-3">
+                <label class="font-weight-bolder mb-0" for="fullname"><b>Fullname</b></label>
+                <input class="form-control shadow-none border form-control-lg font-14" id="fullname" type="text"
+                    readonly />
+            </div>
+            <div class="form-group mb-3">
+                <label class="font-weight-bolder mb-0" for="email"><b>Email</b></label>
+                <input class="form-control shadow-none border form-control-lg font-14" id="email" type="text"
+                    readonly />
+            </div>
+            <div class="form-group mb-3">
+                <label class="font-weight-bolder mb-0" for="phone"><b>Phone</b></label>
+                <input class="form-control shadow-none border form-control-lg font-14" id="phone" type="text"
+                    readonly />
+            </div>
+            <div class="form-group mb-3">
+                <label class="font-weight-bolder mb-0" for="query"><b>Message</b></label>
+                <textarea class="form-control shadow-none border form-control-lg font-14" rows="5" id="query"
+                    readonly></textarea>
+            </div>
+            <div class="form-group mb-3">
+                <label class="font-weight-bolder mb-0" for="reply"><b>Reply</b></label>
+                <textarea class="form-control shadow-none border form-control-lg font-14" rows="5"
+                    id="reply"></textarea>
+            </div>
+            <div class="form-group mb-3">
+                <label class="font-weight-bolder mb-0" for="is_active"><b>Answered</b></label>
+                <select id="is_active" name="is_active"
+                    class="form-select shadow-none border form-control-lg font-14"></select>
+            </div>
+        </div>
+        <div class="offcanvas-footer d-flex p-3 py-2 border-top bg-light">
+            <button class="btn btn-primary btn-submit w-50 font-12 me-2" id="btnsubmit"
+                type="submit"><b>Proceed</b></button>
+            <button class="btn btn-light border w-50  font-12 ms-2" data-bs-dismiss="offcanvas"
+                type="button"><b>Cancel</b></button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Modules -->
+<script src="{% static 'modules/dashboard/query/listing.js' %}"></script>
+<script src="{% static 'modules/dashboard/query/create.js' %}"></script>
+<script src="{% static 'modules/dashboard/query/update.js' %}"></script>
+<script src="{% static 'modules/dashboard/query/view.js' %}"></script>
+<script src="{% static 'modules/dashboard/query/delete.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,94 @@
+.search-section {
+    padding: var(--container-d);
+    margin-top: -60px;
+    z-index: 2;
+    position: relative;
+
+    .search-form {
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        padding: 15px 20px;
+        box-shadow: var(--shadow);
+        border-radius: var(--rounded-lg);
+
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-right: 10px;
+
+            select {
+                -o-webkit-appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background: transparent;
+                background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+                background-repeat: no-repeat;
+                background-position-x: 98%;
+                background-position-y: 5px;
+                border: 1px solid #dfdfdf;
+            }
+
+            .form-label {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+
+
+            .form-field {
+                outline: none;
+                border: none;
+                display: block;
+                width: inherit;
+                background-color: var(--light);
+                padding: 10px;
+                border-radius: var(--rounded-lg);
+            }
+
+        }
+
+        .btn {
+            background-color: var(--secondary);
+            color: white;
+            padding: 20px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: var(--rounded-lg);
+        }
+    }
+}
+
+
+@media screen and (max-width: 1030px) {
+    .search-section {
+        padding: var(--container-d);
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .search-section {
+        padding: var(--container-t);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .search-section {
+        padding: var(--container-m);
+
+        .search-form {
+            display: flex;
+            flex-direction: column;
+            padding: 15px 20px;
+
+            .form-group {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

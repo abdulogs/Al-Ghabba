@@ -1,0 +1,129 @@
+{% extends 'website/layouts/primary.html' %}
+
+{% load static %}
+
+{% block title %} Search - {% endblock %}
+
+{% block seo %} {% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'css/website/pages/search/stylesheet.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<main class="content">
+    <section class="breadcrumb bg-light">
+        <h1 class="heading">
+            <a href="/" class="bx bx-home t-dark icon"></a>
+            <span class="t-light dash"> - </span> Search
+        </h1>
+        <h2 class="sub-heading">Properties listing.</h2>
+        <p class="description">Now you can browse properties with search filters.</p>
+        <br><br><br><br>
+    </section>
+    <section class="search-section">
+        <div class="search-form">
+        <input type="hidden" id="agent_id" value="">
+
+            <div class="form-group">
+                <label for="purpose" class="form-label"><b>Property for</b></label>
+                <select name="purpose" id="purpose" class="form-field">
+                    {% if purpose %}
+                    <optgroup label="Selected">
+                        <option value="{{ purpose }}">{{ purpose }}</option>
+                    </optgroup>
+                    {% else %}
+                    <option value="">Select</option>
+                    {% endif %}
+                    <option value="Sale">Sale</option>
+                    <option value="Rent">Rent</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="bedroom" class="form-label"><b>Bedrooms</b></label>
+                <select name="bedroom" id="bedroom" class="form-field">
+                    {% if bedroom %}
+                    <optgroup label="Selected">
+                        <option value="{{ bedroom }}">{{ bedroom }}</option>
+                    </optgroup>
+                    {% else %}
+                    <option value="">Select</option>
+                    {% endif %}
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="bathroom" class="form-label"><b>Bathrooms</b></label>
+                <select name="bathroom" id="bathroom" class="form-field">
+                    {% if bathroom %}
+                    <optgroup label="Selected">
+                        <option value="{{ bathroom }}">{{ bathroom }}</option>
+                    </optgroup>
+                    {% else %}
+                    <option value="">Select</option>
+                    {% endif %}
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+            </div>
+            <button class="btn bx bx-search-alt" id="search-btn"></button>
+        </div>
+    </section>
+
+    <section class="results-section">
+        <div class="left-col">
+            <h3 class="heading"><b>PROPERTIES</b></h3>
+            <p class="description" id="listingcount"></p>
+        </div>
+        <div class="right-col" >
+            <div class="form-group">
+                <label for="ordering" class="form-label"><b>Sort listing</b></label>
+                <select name="ordering" id="ordering" class="form-field">
+                    <option value="-id">Recents</option>
+                    <option value="id">Oldests</option>
+                </select>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br>
+
+    <!-- Properties -->
+    <section class="properties-row" id="listing"></section>
+    <!-- Properties -->
+
+    <!-- Loading -->
+    <div class="t-center">
+        <button class="btn btn-p bx bx-chevrons-left" id="start"></button>
+        <button class="btn btn-p" value="0" id="previous">Previous</button>
+        <button class="btn btn-p" value="2" id="next">Next</button>
+        <button class="btn btn-p bx bx-chevrons-right" id="last"></button>
+    </div>
+    <!-- Loading -->
+
+    <br><br><br><br><br><br><br><br><br>
+</main>
+{% endblock %}
+
+
+{% block scripts %}
+<!-- Modules -->
+<script src="{% static 'modules/website/listing/index.js' %}"></script>
+<!-- Intitialization -->
+<script>loadListing()</script>
+{% endblock %}

@@ -1,0 +1,207 @@
+.form-card-50 {
+    width: 50%;
+}
+
+.form-card-40 {
+    width: 40%;
+}
+
+
+.form-card {
+    background-color: white;
+    box-shadow: var(--shadow);
+    border-radius: var(--rounded);
+    margin-top: 80px;
+    margin-bottom: 30px;
+
+    .form-header {
+        padding: 40px 20px;
+        padding-bottom: 10px;
+
+        .heading {
+            font-size: 35px;
+            margin-bottom: 15px;
+            font-weight: bolder;
+            color: var(--text);
+            text-transform: uppercase;
+        }
+
+        .sub-heading {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .link {
+            color: var(--secondary);
+        }
+    }
+
+    .form-body {
+        padding: 20px;
+        padding-bottom: 0px;
+    }
+
+    .form-footer {
+        padding: 20px;
+        padding-top: 5px;
+    }
+}
+
+
+.form-row {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+
+    .form-col {
+        width: 100%;
+
+        &:first-child {
+            margin-right: 10px;
+        }
+
+        &:last-child {
+            margin-left: 10px;
+        }
+    }
+}
+
+.form-group {
+    border-radius: var(--rounded);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    }
+
+    .form-label {
+        font-weight: bolder;
+        color: var(--text);
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        margin: 0px;
+        align-self: flex-start;
+        margin-top: 5px;
+
+        .icon {
+            margin-right: 10px;
+            color: var(--secondary);
+            padding: 5px;
+            border-radius: 50px;
+            background-color: var(--light);
+        }
+
+        .required {
+            font-size: 20px;
+            color: red;
+            margin-left: 5px;
+        }
+    }
+
+    select {
+        -o-webkit-appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: transparent;
+        background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+        background-repeat: no-repeat;
+        background-position-x: 98%;
+        background-position-y: 5px;
+        border: 1px solid #dfdfdf;
+    }
+
+    .input-field[disabled=disabled],
+    .input-field:disabled {
+        background-color: #EFF3F7 !important;
+        color: #000;
+        cursor: not-allowed;
+    }
+
+    .input-field {
+        padding: 5px 15px;
+        outline: none;
+        border: none;
+        color: var(--text);
+        resize: none;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        height: 35px;
+        display: block;
+        background-color: transparent;
+
+        &::placeholder {
+            color: #000;
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+            box-shadow: 0 0 0 30px var(--main) inset !important;
+            -webkit-box-shadow: 0 0 0 30px var(--main) inset !important;
+        }
+
+        &:-webkit-autofill {
+            -webkit-text-fill-color: var(--text-light) !important;
+        }
+    }
+
+    .input-larger {
+        height: 100px !important;
+    }
+}
+
+
+@media screen and (max-width: 1030px) {
+    .form-card-50 {
+        width: 50%;
+    }
+
+    .form-card-40 {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .form-card-50 {
+        width: 80%;
+    }
+
+    .form-card-40 {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .form-card-50 {
+        width: 95%;
+    }
+
+    .form-card-40 {
+        width: 95%;
+    }
+
+    .form-row {
+        display: flex;
+        flex-direction: column;
+
+        .form-col {
+            width: 100%;
+
+            &:first-child {
+                margin-right: 0px;
+            }
+
+            &:last-child {
+                margin-left: 0px;
+            }
+        }
+    }
+
+}

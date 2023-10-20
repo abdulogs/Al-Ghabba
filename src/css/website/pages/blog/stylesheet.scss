@@ -1,0 +1,109 @@
+@import "../../layouts/primary";
+
+.blog-meta {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+    .dot {
+        font-size: 5px;
+        margin: 0 5px;
+        color: var(--secondary);
+    }
+
+    .category {
+        border-radius: var(--rounded-sm);
+        border: 1px solid var(--primary);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 2px 8px;
+        color: var(--secondary);
+        display: inline-block;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: var(--primary);
+        }
+    }
+
+    .date,
+    .author {
+        font-size: 14px;
+        font-weight: 700;
+
+        .icon {
+            background-color: var(--bg-light);
+            padding: 3px;
+            text-align: center;
+            font-size: 15px;
+            border-radius: 50px;
+        }
+    }
+}
+
+.blog-details {
+    position: relative;
+
+    .blog-image {
+        background-color: var(--bg-light);
+        display: inline-block;
+        width: 100%;
+        height: 600px;
+
+        .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .description {
+        margin-top: 40px;
+        padding: var(--container-d);
+        font-size: 20px !important;
+        line-height: 35px;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .blog-meta {
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+
+        .category {
+            margin-top: 10px;
+        }
+
+        .date,
+        .author {
+            margin-top: 10px;
+        }
+    }
+
+
+    .blog-details {
+        .blog-image {
+            height: 500px;
+        }
+
+        .description {
+            padding: var(--container-t);
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .blog-details {
+        .blog-image {
+            height: 300px;
+        }
+
+        .description {
+            padding: var(--container-m);
+        }
+    }
+}

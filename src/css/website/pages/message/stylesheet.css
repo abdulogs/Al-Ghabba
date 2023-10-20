@@ -1,0 +1,32 @@
+.content {
+  margin-top: 90px;
+}
+
+@media screen and (max-width: 1030px) {
+  .content {
+    margin-top: 90px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .content {
+    margin-top: 70px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .content {
+    margin-top: 105px;
+  }
+}
+.content .breadcrumb {
+  overflow: visible;
+}
+.content .breadcrumb .msg-icon {
+  font-size: 120px;
+  margin-bottom: 20px;
+}
+.content .breadcrumb .icon-success {
+  color: aquamarine;
+}
+.content .breadcrumb .icon-error {
+  color: red;
+}/*# sourceMappingURL=stylesheet.css.map */

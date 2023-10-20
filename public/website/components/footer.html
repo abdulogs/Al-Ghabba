@@ -1,0 +1,118 @@
+{% load static %}
+
+{% load helpers %}
+<footer class="footer">
+    <section class="partner-section">
+        <div class="container">
+            <div class="details">
+                <h3 class="heading"><b>Looking for a dream home?</b></h3>
+                <p class="description">We can help you realize your dream of a new home</p>
+            </div>
+            <a href="/search/" class="btn">Explore</a>
+        </div>
+    </section>
+    <section class="footer-header">
+        <div class="footer-col">
+            <a href="/" class="logo">
+                <img src="{% static 'images/logo-2.png' %}" class="image" alt="Logo">
+            </a>
+            <p class="description">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. At impedit officia asperiores deserunt dicta
+                delectus, illo magni? Placeat, dolores sunt. Eum deserunt eveniet maxime doloribus vero aspernatur!
+                Eligendi, sequi ex?
+            </p>
+        </div>
+        <div class="footer-col">
+            <h6 class="heading">Company</h6>
+            <ul class="footer-list">
+                <li class="list-item">
+                    <a href="/about-us/" class="list-link">
+                        <i class="bx bx-building icon"></i>
+                        About us
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="/contact-us/" class="list-link">
+                        <i class="bx bx-building icon"></i>
+                        Contact us
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="/privacy-policy/" class="list-link">
+                        <i class="bx bx-building icon"></i>
+                        Privacy policy
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="/terms-and-conditions/" class="list-link">
+                        <i class="bx bx-building icon"></i>
+                        Terms and conditions
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="/faqs/" class="list-link">
+                        <i class="bx bx-building icon"></i>
+                        Faqs
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h6 class="heading">Contact</h6>
+            <ul class="footer-list">
+                <li class="list-item">
+                    <a href="#!" class="list-link">
+                        <span class="bx bx-map icon"></span>
+                        Riyadh, KSA
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="mailto:{{ setting.email }}" class="list-link">
+                        <span class="bx bx-envelope icon"></span>
+                        info@alghabba.com
+                    </a>
+                </li>
+            </ul>
+            <br>
+            <br>
+            <h6 class="heading">Newsletter</h6>
+            <form id="footersubscribeform" class="subscribe">
+                <input type="email" class="input-field" id="email_field_footer" name="email"
+                    placeholder="Your email...">
+                <button type="submit" class="btn-send bx bx-send"></button>
+            </form>
+        </div>
+        <div class="footer-col">
+            <h6 class="heading">Connect</h6>
+            <ul class="footer-list">
+                <li class="list-item">
+                    <a href="#" class="list-link">
+                        <span class="icon bx bxl-facebook-circle"></span> Facebook
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="#" class="list-link">
+                        <span class="icon bx bxl-instagram"></span> Instagram
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="#" class="list-link">
+                        <span class="icon bx bxl-twitter"></span> Twitter
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a href="#" class="list-link">
+                        <span class="icon bx bxl-youtube"></span> Youtube
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="footer-bottom">
+        <p class="description">&copy; {% now "Y" %} alghabba.com</p>
+    </section>
+</footer>
+
+<input type="hidden" value="{{csrf_token}}" name="token" id="token">
+
+<div id="response"></div>

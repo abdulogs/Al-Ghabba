@@ -1,0 +1,14 @@
+.product-cards {
+    .product-card {
+        .addtocart {
+            display: none;
+            border-radius: 50px;
+        }
+
+        &:hover {
+            .addtocart {
+                display: block;
+            }
+        }
+    }
+}

@@ -1,0 +1,94 @@
+{% extends 'website/layouts/primary.html' %}
+
+{% load static %}
+
+{% load helpers %}
+
+{% block title %} {{ agent.first_name }} {{ agent.last_name }} - Agent details - {% endblock %}
+
+{% block seo %} {% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'css/website/pages/agent/stylesheet.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<main class="content">
+    <!-- Agents -->
+    <section class="agent-details">
+        <div class="left-col bg-light">
+            <article class="agent-card">
+                <a href="{{ agent.avatar | placeholder }}" class="avatar">
+                    <img src="{{ agent.avatar | placeholder }}" alt="{{ agent.first_name }} {{ agent.last_name }}"
+                        class="image">
+                </a>
+                <h3 class="heading">
+                    <a href="/agent-details/{{ agent.username }}/">{{ agent.first_name }} {{ agent.last_name }}</a>
+                </h3>
+                <p class="username">@{{ agent.username }}</p>
+                <div class="social-panel">
+                    <a class="item" href="{{ agent.facebook }}"><span class="bx bxl-facebook"></span></a>
+                    <a class="item" href="{{ agent.twitter }}"><span class="bx bxl-twitter"></span></a>
+                    <a class="item" href="{{ agent.mail }}"><span class="bx bx-envelope"></span></a>
+                </div>
+                <h4 class="sub-heading"><b>About me</b></h4>
+                <p class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem vel eos natus minus inventore
+                    delectus
+                    adipisci deleniti aliquid at exercitationem reprehenderit consequuntur id esse saepe nulla quaerat,
+                    necessitatibus accusantium porro!
+                </p>
+            </article>
+        </div>
+        <input type="hidden" id="agent_id" value="{{ agent.id }}">
+        <div class="right-col">
+            <div class="section-heading">
+                <p class="section-badge"><span class="badge">Properties</span></p>
+                <h4 class="heading"><b>Agent Listing</b></h4>
+            </div>
+
+            <section class="results-section" style="padding:0;">
+                <div class="left-col">
+                    <h3 class="heading"><b>PROPERTIES</b></h3>
+                    <p class="description" id="listingcount"></p>
+                </div>
+                <div class="right-col" style="width: 170px;">
+                    <div class="form-group">
+                        <label for="ordering" class="form-label"><b>Sort listing</b></label>
+                        <select name="ordering" id="ordering" class="form-field">
+                            <option value="-id">Recents</option>
+                            <option value="id">Oldests</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+            <br><br><br><br>
+
+            <!-- Properties -->
+            <section class="properties-row" id="listing"></section>
+            <!-- Properties -->
+
+            <!-- Loading -->
+            <div class="t-center">
+                <button class="btn btn-p bx bx-chevrons-left" id="start"></button>
+                <button class="btn btn-p" value="0" id="previous">Previous</button>
+                <button class="btn btn-p" value="2" id="next">Next</button>
+                <button class="btn btn-p bx bx-chevrons-right" id="last"></button>
+            </div>
+            <!-- Loading -->
+        </div>
+
+    </section>
+    <!-- Agents -->
+    <br><br><br><br>
+</main>
+{% endblock %}
+
+
+{% block scripts %}
+<!-- Modules -->
+<script src="{% static 'modules/website/listing/index.js' %}"></script>
+<!-- Intitialization -->
+<script>loadListing()</script>
+{% endblock %}
